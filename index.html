@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sermons de Brélévenez — Analyse paléographique définitive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cormorant+SC:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:       #f3ede0;
+  --bg-dark:  #e8dfc8;
+  --bg-panel: #ece3cc;
+  --ink:      #1a1710;
+  --ink-mid:  #36301e;
+  --ink-lt:   #6a5e3c;
+  --vermeil:  #892020;
+  --gold:     #7a6020;
+  --gold-lt:  #b09040;
+  --rule:     #c0aa70;
+  --rule-lt:  #d8c890;
+  --w: 860px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #141008; }
+body {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 21px;
+  line-height: 1.95;
+  color: var(--ink);
+  background: var(--bg);
+  max-width: var(--w);
+  margin: 36px auto 60px;
+  padding: 72px 86px 96px;
+  box-shadow: 0 4px 90px rgba(0,0,0,.60);
+}
+/* ─── RUNNING HEAD ─── */
+.running-head {
+  text-align: center;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 13px 0;
+  margin-bottom: 6px;
+}
+.rh-journal {
+  font-family: 'Cormorant SC', serif;
+  font-size: 13px;
+  letter-spacing: 3.5px;
+  color: var(--ink-lt);
+  text-transform: uppercase;
+}
+.rh-sub {
+  font-size: 15px;
+  font-style: italic;
+  color: var(--ink-lt);
+  margin-top: 2px;
+}
+/* ─── TITLE ─── */
+.title-block {
+  text-align: center;
+  margin: 56px 0 50px;
+}
+.main-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 37px;
+  font-weight: 600;
+  line-height: 1.28;
+  color: var(--ink);
+  margin-bottom: 14px;
+}
+.sub-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 21px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--ink-mid);
+  line-height: 1.55;
+  margin-bottom: 26px;
+}
+.orn-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px auto;
+  width: 50%;
+}
+.orn-row::before, .orn-row::after {
+  content:'';
+  flex:1;
+  height:.5px;
+  background: linear-gradient(to right, transparent, var(--rule), transparent);
+}
+.orn { color: var(--gold-lt); font-size: 20px; }
+.meta {
+  font-size: 16px;
+  color: var(--ink-lt);
+  font-style: italic;
+  line-height: 1.85;
+}
+.meta strong { font-style: normal; color: var(--ink-mid); }
+/* ─── ABSTRACT ─── */
+.abstract {
+  margin: 48px 0;
+  padding: 20px 28px;
+  border-left: 3px solid var(--rule);
+  background: rgba(192,170,112,.10);
+}
+.abstract-label {
+  font-family: 'Cormorant SC', serif;
+  font-size: 13px;
+  letter-spacing: 2.5px;
+  color: var(--gold);
+  margin-bottom: 11px;
+}
+.abstract p {
+  font-size: 18px;
+  font-style: italic;
+  color: var(--ink-mid);
+  line-height: 1.85;
+  text-align: justify;
+  hyphens: auto;
+  text-indent: 0;
+  margin-bottom: 10px;
+}
+.abstract p:last-child { margin-bottom: 0; }
+.kw { font-size: 16px; color: var(--ink-lt); margin-top: 12px; font-style: normal; }
+.kw strong { color: var(--ink-lt); }
+/* ─── SECTIONS ─── */
+body { counter-reset: sec; }
+h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--ink);
+  border-bottom: .5px solid var(--rule);
+  padding-bottom: 8px;
+  margin: 60px 0 22px;
+  counter-increment: sec;
+}
+h2::before {
+  content: counter(sec, upper-roman) ". ";
+  color: var(--gold-lt);
+  font-weight: 400;
+}
+h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 21px;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--ink-mid);
+  margin: 34px 0 14px;
+}
+h3::before { content: "— "; color: var(--rule); }
+p {
+  text-align: justify;
+  hyphens: auto;
+  margin-bottom: 16px;
+  font-size: 20px;
+  text-indent: 2em;
+}
+p.no-indent { text-indent: 0; }
+
+/* ─── FIGURE PLEINE LARGEUR ─── */
+.figure-full {
+  margin: 44px 0 48px;
+}
+.figure-full img {
+  width: 100%;
+  display: block;
+  border: .5px solid var(--rule);
+  box-shadow: 0 3px 18px rgba(0,0,0,.18);
+}
+.figure-full .figure-caption {
+  margin-top: 12px;
+  font-size: 16px;
+  color: var(--ink-lt);
+  line-height: 1.65;
+  font-style: italic;
+  text-align: center;
+}
+.figure-full .figure-caption strong {
+  font-style: normal;
+  color: var(--ink-mid);
+  display: block;
+  margin-bottom: 4px;
+  font-size: 17px;
+}
+
+/* ─── CITATION BLOCK ─── */
+.cit {
+  margin: 26px 40px;
+  padding: 14px 20px;
+  border-left: 2px solid var(--vermeil);
+  background: rgba(137,32,32,.04);
+}
+.cit-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 20px;
+  color: var(--vermeil);
+  line-height: 1.75;
+  margin-bottom: 7px;
+}
+.cit-note { font-size: 17px; color: var(--ink-lt); line-height: 1.65; font-style: normal; }
+.cit-ref { font-size: 15px; color: var(--ink-lt); text-align: right; margin-top: 8px; font-style: italic; }
+
+/* ─── LIENS CORPUS ─── */
+.doc-links {
+  margin: 32px 0;
+  padding: 18px 24px;
+  background: var(--bg-dark);
+  border: .5px solid var(--rule);
+}
+.doc-links-title {
+  font-family: 'Cormorant SC', serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: var(--gold);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+.doc-link-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.doc-link {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 16px;
+  line-height: 1.55;
+}
+.link-icon { flex-shrink: 0; color: var(--gold-lt); font-size: 17px; margin-top: 1px; }
+.doc-link a {
+  color: var(--vermeil);
+  text-decoration: none;
+  border-bottom: .5px dotted var(--vermeil);
+}
+.doc-link a:hover { border-bottom-style: solid; }
+.doc-link-label { font-size: 13px; color: var(--ink-lt); display: block; }
+
+/* ─── SYNTHESIS TABLE ─── */
+.synth {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 28px 0 36px;
+  font-size: 17px;
+}
+.synth tr:not(:last-child) td, .synth tr:not(:last-child) th { border-bottom: .5px solid var(--rule-lt); }
+.synth td, .synth th { padding: 10px 14px; vertical-align: top; }
+.synth .sk {
+  background: var(--bg-dark);
+  border-right: .5px solid var(--rule-lt);
+  font-family: 'Cormorant SC', serif;
+  font-size: 13px;
+  letter-spacing: 1.2px;
+  color: var(--gold);
+  text-transform: uppercase;
+  white-space: nowrap;
+  width: 170px;
+}
+.synth .sv { color: var(--ink-mid); line-height: 1.65; }
+.synth .sv strong { color: var(--ink); }
+
+/* ─── SÉPARATEUR DE PARTIE ─── */
+.partie-sep {
+  margin: 80px 0 64px;
+  text-align: center;
+}
+.partie-sep-rule {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--rule), transparent);
+  margin-bottom: 28px;
+}
+.partie-sep-label {
+  font-family: 'Cormorant SC', serif;
+  font-size: 13px;
+  letter-spacing: 4px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.partie-sep-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 29px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+.partie-sep-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--ink-mid);
+  line-height: 1.6;
+}
+.partie-sep-orn {
+  color: var(--gold-lt);
+  font-size: 21px;
+  margin-top: 18px;
+  display: block;
+}
+
+/* ─── NOTICE MANUSCRIT (partie 2) ─── */
+.ms-notice {
+  margin: 64px 0 0;
+  padding: 0 0 56px;
+  border-bottom: .5px solid var(--rule-lt);
+}
+.ms-notice:last-of-type {
+  border-bottom: none;
+}
+.ms-notice-header {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.ms-number {
+  font-family: 'Cormorant SC', serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: var(--gold);
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+.ms-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 23px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.3;
+}
+.ms-photo {
+  width: 100%;
+  display: block;
+  border: .5px solid var(--rule);
+  box-shadow: 0 2px 14px rgba(0,0,0,.15);
+  margin: 18px 0 10px;
+}
+.ms-photo-caption {
+  font-size: 15px;
+  color: var(--ink-lt);
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 18px;
+}
+.ms-links {
+  display: flex;
+  gap: 18px;
+  margin: 14px 0 20px;
+  flex-wrap: wrap;
+}
+.ms-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 16px;
+  color: var(--vermeil);
+  text-decoration: none;
+  border-bottom: .5px dotted var(--vermeil);
+  padding-bottom: 1px;
+}
+.ms-link:hover { border-bottom-style: solid; }
+.ms-link-icon { font-size: 15px; color: var(--gold-lt); }
+.ms-analyse {
+  font-size: 19px;
+  line-height: 1.9;
+  color: var(--ink-mid);
+  text-align: justify;
+  hyphens: auto;
+  text-indent: 0;
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+.ms-analyse-tech {
+  margin-top: 14px;
+  padding: 12px 18px;
+  background: rgba(192,170,112,.08);
+  border-left: 2px solid var(--rule);
+  font-size: 17px;
+  color: var(--ink-lt);
+  line-height: 1.75;
+  font-style: italic;
+}
+.ms-analyse-tech strong {
+  font-style: normal;
+  color: var(--ink-mid);
+}
+
+/* ─── FOOTNOTES ─── */
+.footnotes {
+  margin-top: 64px;
+  border-top: .5px solid var(--rule);
+  padding-top: 20px;
+}
+.fn-title {
+  font-family: 'Cormorant SC', serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: var(--ink-lt);
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+.fn {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 9px;
+  font-size: 16px;
+  color: var(--ink-lt);
+  line-height: 1.65;
+}
+.fn-n { flex-shrink: 0; color: var(--vermeil); font-size: 15px; padding-top: 2px; min-width: 20px; }
+sup { color: var(--vermeil); font-size: 13px; }
+
+/* ─── COLOPHON ─── */
+.colophon {
+  text-align: center;
+  margin-top: 60px;
+  padding-top: 22px;
+  border-top: .5px solid var(--rule);
+  font-size: 15px;
+  color: var(--ink-lt);
+  font-style: italic;
+  line-height: 1.9;
+}
+.col-orn { color: var(--gold-lt); font-size: 23px; display: block; margin-bottom: 9px; }
+
+@media print {
+  html { background: white; }
+  body { box-shadow: none; margin: 0 auto; }
+}
+</style>
+</head>
+<body>
+
+<!-- ─── EN-TÊTE ─── -->
+<div class="running-head">
+  <div class="rh-journal">Paléographie &amp; Histoire Ecclésiastique de Bretagne</div>
+  <div class="rh-sub">Fonds manuscrit de Brélévenez — Lannion, Côtes-d'Armor · Analyse définitive, 2026</div>
+</div>
+
+<div class="title-block">
+  <div class="main-title">Analyse paléographique et théologique des sermons manuscrits<br>de l'église de Brélévenez (Lannion) </div>
+  <div class="sub-title">Étude fondée sur le corpus complet : vingt-huit manuscrits originaux,<br>Transcriptions intégrales et macrophotographies des pièces principales</div>
+  <div class="orn-row"><span class="orn">✦</span></div>
+  <div class="meta">
+    <strong>Corpus d'analyse :</strong> Ms. Brélévenez I (15 f°), Ms. Brélévenez II (13 f°), Ms. Brélévenez III (12 f°)<br>
+    <strong>Corpus complet :</strong> Vingt-huit manuscrits — Sacristie de l'église de Brélévenez, Lannion (Côtes-d'Armor, Bretagne)<br>
+    <em></em>
+  </div>
+</div>
+
+<!-- ─── RÉSUMÉ ─── -->
+<div class="abstract">
+  <div class="abstract-label">Résumé</div>
+  <p>Les manuscrits conservés dans la sacristie de l'église de Brélévenez à Lannion constituent un corpus homilétique cohérent : vingt-huit cahiers indépendants, rédigés à la plume d'oie sur papier vergé artisanal à l'encre ferro-gallique, relevant de la tradition rhétorique et spirituelle sulpicienne. L'analyse croisée de tous les éléments disponibles — macrophotographies des manuscrits, transcriptions intégrales des vingt-cinq sermons, dépouillement systématique des marqueurs textuels datants — permet de proposer une fourchette de rédaction comprise entre les premières décennies du XIX<sup>e</sup> siècle et les années <strong>1840</strong>, avec un centre de gravité probable dans les décennies <strong>1820–1845</strong>. Trois sermons sont datables par des éléments textuels internes précis : le sermon XVII par la mention explicite du choléra de 1832–1833 et des chemins de fer, le sermon XXV par une date diocésaine inscrite dans le corps du texte latin (18 juillet 1833), le sermon XXIV par la série des attentats contre Louis-Philippe, dont le dernier cité (Darmès) est de 1840.</p>
+  <p>L'examen comparatif des macrophotographies révèle la présence d'un seul scripteur au sein du corpus, unique prédicateur bilingue pratiquant deux styles d'écriture selon la langue, l'emploi des manuscrits ( brouillon ou sermon pouvant être lu et étudié un autre prêtre). La longue période des écrits a favorisé aussi des variations dans la manière d'écrire </p>
+  <p>La présente étude comporte deux parties. La première expose l'analyse paléographique, codicologique, linguistique et théologique fondée sur les trois premiers manuscrits, entièrement transcrits et documentés en macrophotographie. La seconde présente les manuscrits suivants, avec notice de chaque pièce, liens vers les sources numérisées et commentaire technique sur les caractéristiques matérielles de chaque document.</p>
+  <div class="kw"><strong>Mots-clés :</strong> paléographie française, codicologie, sermon catholique post-tridentin, Brélévenez, Lannion, Trégor, plume d'oie, encre ferro-gallique, papier vergé, Monarchie de Juillet, homilétique sulpicienne, breton écrit, bilinguisme pastoral.</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- PARTIE I — ANALYSE DES TROIS MANUSCRITS FONDATEURS        -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<h2>Introduction — Le corpus et sa découverte</h2>
+<p>Les trois manuscrits ici étudiés ont été retrouvés dans la sacristie de l'église de Brélévenez, édifice roman du XII<sup>e</sup> siècle perché sur la colline dominant Lannion, en Bretagne armoricaine. Leur conservation, vraisemblablement fortuite, dans le mobilier liturgique de cette sacristie en fait des témoins directs d'une pratique pastorale locale que les archives diocésaines n'auraient peut-être pas préservée avec autant d'immédiateté. Ce sont des documents de travail, non des pièces d'archives constituées intentionnellement, et c'est précisément leur statut de papiers de chaire qui leur confère leur valeur documentaire.</p>
+<p>Le corpus d'analyse se compose de trois cahiers distincts dont la pagination originale n'a pas été conservée : le premier (<em>Ms. Brélévenez I</em>), sermon sur la sainteté et le salut fondé sur l'incipit scripturaire <em>Gaudete et exsultate</em> (Matthieu 5, 12), compte treize folios incluant, au dernier feuillet, un sermon annexe pour l'inauguration d'une statue et le dépôt de reliques dans la chapelle d'une communauté religieuse — document exceptionnel pour la datation de l'ensemble ; le deuxième (<em>Ms. Brélévenez II</em>), sermon sur la mort universelle fondé sur <em>Statutum est hominibus semel mori</em> (Hébreux 9, 27), compte quinze folios ; le troisième (<em>Ms. Brélévenez III</em>), sermon sur la Divine Eucharistie fondé sur <em>Memoriam fecit mirabilium suorum</em> (Psaume 111, 4), compte douze folios et se distingue des deux autres par un papier visiblement réglé et une calligraphie plus cursive. Au total, quarante folios recto-verso constituent la matière première de la présente analyse, qui sert en outre de base d'identification pour l'ensemble des vingt manuscrits du corpus.</p>
+<div class="ms-notice" id="ms-i"><div class="ms-notice" id="ms-ii"><div class="ms-notice" id="ms-iii">
+<!-- ─── LIENS CORPUS ─── -->
+<div class="doc-links">
+  <div class="doc-links-title">Corpus documentaire — Accès aux sources</div>
+  <div class="doc-link-row">
+    <div class="doc-link">
+      <span class="link-icon">☞</span>
+      <div>
+        <span class="doc-link-label">Sermon I — Transcription</span>
+        <a href="assets/sermon1retranscrit.html">Ms. Brélévenez I — <em>Gaudete et exsultate</em> (HTML)</a>
+      </div>
+    </div>
+    <div class="doc-link">
+      <span class="link-icon">☞</span>
+      <div>
+        <span class="doc-link-label">Sermon I — Manuscrit original</span>
+        <a href="assets/sermon_1_compressed.pdf">Ms. Brélévenez I — 13 folios (PDF)</a>
+      </div>
+    </div>
+    <div class="doc-link">
+      <span class="link-icon">☞</span>
+      <div>
+        <span class="doc-link-label">Sermon II — Transcription</span>
+        <a href="assets/Sermon2retranscrit.html">Ms. Brélévenez II — <em>Statutum est</em> (HTML)</a>
+      </div>
+    </div>
+    <div class="doc-link">
+      <span class="link-icon">☞</span>
+      <div>
+        <span class="doc-link-label">Sermon II — Manuscrit original</span>
+        <a href="assets/sermon_2_compressed.pdf">Ms. Brélévenez II — 15 folios (PDF)</a>
+      </div>
+    </div>
+    <div class="doc-link">
+      <span class="link-icon">☞</span>
+      <div>
+        <span class="doc-link-label">Sermon III — Transcription</span>
+        <a href="assets/Sermon3retranscrit.html">Ms. Brélévenez III — <em>Memoriam fecit</em> (HTML)</a>
+      </div>
+    </div>
+    <div class="doc-link">
+      <span class="link-icon">☞</span>
+      <div>
+        <span class="doc-link-label">Sermon III — Manuscrit original</span>
+        <a href="assets/sermon_3_compressed.pdf">Ms. Brélévenez III — 12 folios (PDF)</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<h2>Le support matériel — Papier, conservation, structure des cahiers</h2>
+<p class="no-indent">L'analyse du support est le premier acte de toute expertise paléographique, car la nature du papier constitue à la fois un indice de datation et un cadre d'interprétation pour l'ensemble des autres observations.</p>
+
+<h3>Un papier vergé artisanal de fabrication manuelle</h3>
+<p>Les trois manuscrits sont écrits sur du <em>papier vergé</em> (<em>laid paper</em>) produit à la forme à main, technique qui demeure dominante en Europe — et tout particulièrement dans les papeteries de l'Ouest français — jusqu'à la généralisation progressive de la machine Fourdrinier après 1800–1820. Ce papier se reconnaît, même à l'œil nu, aux <em>vergeures</em> (fils de laiton horizontaux, rapprochés, formant la texture principale de la feuille) et aux <em>pontuseaux</em> (fils verticaux espacés, servant de renforts dans la forme), dont l'empreinte reste visible par transparence dans le papier fini. Le grammage, estimé visuellement à 70–90 g/m², est celui d'un papier utilitaire de qualité ordinaire, adapté à l'écriture courante mais non à la calligraphie d'apparat. Il ne s'agit donc pas d'un vélin de luxe, mais du papier de travail courant dans les presbytères et séminaires de l'époque.</p>
+<p>Un indice d'époque supplémentaire est fourni par le <em>Ms. Brélévenez III</em> : les macrophotographies réalisées en 2026 révèlent avec netteté sur ce cahier des lignes horizontales régulièrement espacées, tracées à l'avance sur le papier. Il s'agit d'un <em>papier réglé</em>, dont la présence tend à orienter la datation plutôt vers le début du XIX<sup>e</sup> siècle. Les deux autres cahiers ne présentent pas de réglure apparente, ce qui suggère que les trois manuscrits proviennent de papiers d'origines différentes — indice d'une rédaction étalée dans le temps.</p>
+
+<!-- MACROPHOTOGRAPHIE 1 — pleine largeur -->
+<div class="figure-full">
+  <img src="assets/macro_sermon1.jpg" alt="Macrophotographie Ms. Brélévenez I folio 1">
+  <div class="figure-caption">
+    <strong>Fig. 1 — Ms. Brélévenez I, gros plan du folio 1 (recto)</strong>
+    On distingue la texture du papier vergé non réglé, l'encre brun-noir caractéristique de l'encre ferro-gallique vieillie, et la modulation des pleins et déliés à la plume d'oie taillée. Les attaques de trait légèrement chargées en début de certains mots sont le signe du micro-excès d'encre au moment où la plume reprend contact avec le papier après déplacement de la main. Les terminaisons effilées marquent le soulèvement de la plume en fin de mot.
+  </div>
+</div>
+
+<h3>Vieillissement et état de conservation</h3>
+<p>Le papier des trois cahiers présente un jaunissement prononcé — le fond de page vire au beige-crème soutenu, voire au brun paille dans les zones les plus exposées — résultant de la dégradation oxydative de la cellulose et de la lignine. Ce processus est irréversible et sa cinétique est documentée pour les papiers artisanaux européens, même si elle dépend fortement des conditions de conservation (température, hygrométrie, exposition à la lumière) : un jaunissement de ce degré, observé sur des papiers non traités conservés en milieu non contrôlé, est généralement compatible avec un vieillissement de l'ordre de 180 à 250 ans, soit une fourchette de fabrication approximativement comprise entre 1770 et 1845.<sup>1</sup> Des taches de <em>foxing</em> de nature fongique attestent l'exposition répétée à des conditions d'hygrométrie élevée, caractéristiques d'une sacristie bretonne en granit soumise aux humidités marines du Trégor.</p>
+<p>La dégradation est différentielle selon les cahiers et selon les folios au sein d'un même cahier. Le folio 12 du <em>Ms. Brélévenez I</em>, le folio 8 du <em>Ms. Brélévenez II</em> et les folios 11–12 du <em>Ms. Brélévenez III</em> présentent un effacement quasi total de l'encre sur la plus grande partie de leur surface — phénomène qui s'explique par leur position de <em>page extérieure</em> des cahiers posés à plat, non reliés et sans couverture protectrice, directement exposés à l'air, à l'humidité et aux manipulations. Ce détail fonctionnel confirme que ces manuscrits étaient activement utilisés — feuilletés, posés ouverts, rangés sans soin particulier — et non archivés ou reliés dès leur rédaction.</p>
+
+<!-- ═══════════════════════════════════════════════ -->
+<h2>L'encre — Identification et datation</h2>
+
+<p class="no-indent">L'identification de la nature de l'encre constitue l'un des arguments chronologiques les plus solides dont dispose le paléographe, à condition de distinguer soigneusement les indices visuels des inférences qu'ils autorisent.</p>
+
+<h3>L'encre ferro-gallique : identification</h3>
+<p>L'encre utilisée dans les trois manuscrits est, sans ambiguïté possible, une <em>encre ferro-gallique</em> (<em>iron gall ink</em>), produite par réaction chimique entre le sulfate de fer (vitriol vert) et des tanins extraits de galles de chêne (<em>Quercus infectoria</em>), avec addition de gomme arabique comme liant et d'eau comme solvant. Cette formule, attestée dès les traités médiévaux d'Héraclius et de Théophile (X<sup>e</sup>–XII<sup>e</sup> siècles), constitue la norme absolue de l'écriture manuscrite européenne jusqu'à l'apparition des encres industrielles à l'aniline dans la seconde moitié du XIX<sup>e</sup> siècle. Sa présence dans nos documents ne permet donc pas à elle seule de dater les manuscrits, mais sa <em>teinte actuelle</em> apporte des informations précieuses.</p>
+<p>Fraîchement déposée, l'encre ferro-gallique présente un noir intense, légèrement bleuté ou verdâtre selon la proportion des composants. Au cours du vieillissement, sous l'effet de l'oxydation des sels ferreux en oxydes ferriques (Fe²⁺ → Fe³⁺), la couleur évolue progressivement vers le brun-ambré, le brun-roux ou le brun-ocre selon le degré d'oxydation atteint.<sup>2</sup> Dans les trois manuscrits de Brélévenez, les macrophotographies révèlent une teinte homogène brun-noir à brun foncé, avec des zones plus claires correspondant aux passages d'encre plus diluée (fin de trempage). Ce degré de brunissement est compatible avec un dépôt datant de 180 à 230 ans, soit une fourchette de rédaction comprise approximativement entre 1795 et 1845.</p>
+
+<!-- MACROPHOTOGRAPHIE 2 — pleine largeur -->
+<div class="figure-full">
+  <img src="assets/macro_sermon2.jpg" alt="Macrophotographie Ms. Brélévenez II folio 1">
+  <div class="figure-caption">
+    <strong>Fig. 2 — Ms. Brélévenez II, gros plan du folio 1</strong>
+    La tache de <em>foxing</em> circulaire brun-roux, de nature fongique, témoigne d'un vieillissement en milieu humide, caractéristique des sacristies bretonnes. La transparence du texte verso confirme la minceur du papier vergé. La lettrine de <em>Voilà mf.</em> est un grand <em>V</em> à descente ornée tracé d'une main assurée, parfaitement caractéristique du système graphique du scripteur.
+  </div>
+</div>
+
+<h3>Variations d'encre et reprises d'écriture</h3>
+<p>L'observation attentive de plusieurs folios révèle de légères variations de densité de l'encre — certaines lignes ou certains mots apparaissent plus sombres que d'autres au sein d'un même folio. Ce phénomène est la signature inévitable de la technique d'écriture à la plume trempée dans l'encrier : immédiatement après le trempage, la plume dépose une quantité d'encre plus importante, produisant un trait plus plein et plus foncé ; à mesure que la plume se vide, le trait s'allège jusqu'à devenir discontinu, forçant un nouveau trempage. Ces variations, parfaitement cohérentes avec l'usage d'une plume d'oie et d'un encrier séparé, excluent définitivement l'hypothèse d'un instrument à réservoir intégré (stylo à plume) dont la commercialisation ne date que des années 1880.</p>
+<p>Par ailleurs, la correction supralinéaire visible au folio 5 du <em>Ms. Brélévenez I</em> présente une encre légèrement différente de celle du texte principal — plus foncée, plus chargée — ce qui indique que cette correction a été apportée lors d'une relecture ultérieure, avec un trempage frais dans l'encrier, par la même main mais à un moment différent de la rédaction initiale. Ce type d'auto-correction différée est le comportement ordinaire d'un prédicateur relisant ses notes avant une prédication et amendant son texte à la marge.</p>
+
+<!-- ═══════════════════════════════════════════════ -->
+<h2>L'instrument scripteur — La plume d'oie taillée</h2>
+
+<p>L'examen des caractéristiques du tracé permet d'identifier avec certitude l'instrument employé : une <em>plume d'oie taillée en biseau</em> (<em>quill pen</em>), vraisemblablement une rémige primaire de l'aile gauche — qui convient mieux aux droitiers car l'incurvation naturelle de la plume s'éloigne alors du regard lors de l'écriture — préparée à sec puis assouplie, avec un bec incisé au canif selon la technique décrite dans les traités de calligraphie du XVIII<sup>e</sup> siècle, notamment la <em>Calligraphie</em> de Charles Paillasson (1763) et les articles correspondants de l'<em>Encyclopédie</em>.<sup>3</sup> La plume d'oie est restée l'instrument scriptural dominant en France jusqu'aux années 1830–1840, date à laquelle les plumes d'acier de Joseph Gillott et de ses concurrents anglais commencèrent à se répandre à grande échelle.</p>
+<p>La preuve de cet instrument réside dans la <em>modulation du trait</em> : les traits descendants sont sensiblement plus larges que les traits montants ou horizontaux, produisant le jeu de <em>pleins et déliés</em> caractéristique de la plume flexible à bec fendu. Cette modulation est impossible à reproduire avec une plume d'acier rigide de première génération et résulte mécaniquement de la flexion des deux branches du bec de la plume sous la pression de la main en mouvement descendant. On notera également les attaques de trait légèrement chargées en début de certains mots et les terminaisons effilées qui marquent le soulèvement de la plume en fin de mot.</p>
+
+<!-- MACROPHOTOGRAPHIE 3 — pleine largeur -->
+<div class="figure-full">
+  <img src="assets/macro_sermon3.jpg" alt="Macrophotographie Ms. Brélévenez III folio 4">
+  <div class="figure-caption">
+    <strong>Fig. 3 — Ms. Brélévenez III, gros plan du folio 4</strong>
+    Les lignes horizontales de réglure sur le papier sont clairement visibles à gauche du texte — argument décisif pour une datation postérieure à 1770 environ. L'écriture est ici plus cursive que dans les deux cahiers précédents : module réduit, liaisons plus rapides, inclinaison légèrement plus prononcée. Ce folio illustre la variation normale d'un même scripteur selon l'urgence et les conditions de rédaction.
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<h2>Analyse paléographique — Le système graphique</h2>
+
+<h3>Type d'écriture : la cursive française lettrée</h3>
+<p>L'écriture des trois manuscrits appartient à la famille de la <em>cursive française semi-formelle</em>, héritière directe de ce que les maîtres calligraphes du XVII<sup>e</sup> et du XVIII<sup>e</sup> siècle appelaient la <em>lettre française</em> ou l'<em>écriture de ronde</em>, enseignée dans les collèges et séminaires de l'Ancien Régime comme technique de base de toute formation intellectuelle. Ce type d'écriture se distingue de la <em>ronde commerciale</em> (plus régulière, verticale, aux formes plus fermées, utilisée par les clercs de notaire et les marchands) et de la <em>gothique</em> (disparue de l'usage courant au XVII<sup>e</sup> siècle) par son caractère à la fois lisible et personnel, alliant la discipline d'une formation calligraphique rigoureuse à la liberté d'exécution que confère l'usage quotidien de l'écriture. C'est l'écriture d'un homme instruit qui écrit vite mais avec soin, pour lui-même autant que pour un lecteur potentiel.</p>
+
+<h3>Caractéristiques graphiques détaillées</h3>
+<p>L'inclinaison générale de l'écriture est d'environ 10 à 15° vers la droite par rapport à la verticale, ce qui est conforme à la norme de la cursive française de l'époque (par opposition à l'<em>anglaise</em>, qui s'incline à 45° ou davantage, et qui ne se répand en France que progressivement au cours du XIX<sup>e</sup> siècle). Le module — rapport entre la hauteur des minuscules et celle des capitales — est d'environ 1 pour 2,5 à 3, ce qui est parfaitement régulier à l'échelle du corpus. La hauteur de corps des minuscules est d'environ 3 à 4 mm selon les folios et les moments de rédaction, avec une tendance à la réduction dans les parties plus rapidement exécutées.</p>
+<p>Le traitement des lettres capitales est particulièrement instructif. On observe dans les trois cahiers un usage systématique de <em>lettrines ornées agrandies</em> pour marquer les grandes articulations du discours : dans le <em>Ms. Brélévenez I</em>, la section numérotée III est introduite par un grand <em>C</em> majuscule tracé d'un seul geste en volute ; au folio 3 du même cahier, les mots <em>UNE CHOSE devrait</em> sont composés en capitales de taille double, constituant un titre de section visible de loin. Toutes ces capitales présentent les mêmes caractéristiques morphologiques (attaques en volute, terminaisons à empattement, proportions constantes), ce qui confirme qu'elles sont toutes du même scripteur.</p>
+<p>Parmi les traits diagnostiques les plus fiables pour la datation et l'identification du scripteur, l'absence absolue du <em>s</em> long (ſ) mérite une attention particulière. Sur l'ensemble des quarante folios examinés, portant plusieurs milliers d'occurrences du phonème /s/ en position médiane, on ne relève pas une seule occurrence du <em>s</em> long. Cette absence systématique constitue l'argument chronologique le plus fort en faveur d'une rédaction postérieure à 1780 environ.<sup>4</sup></p>
+
+<h3>Les annotations marginales du <em>Ms. Brélévenez I</em> — une seconde main</h3>
+<p>Le folio 1 du <em>Ms. Brélévenez I</em> présente, dans la marge de reliure gauche, des annotations portées perpendiculairement au texte principal, dans un sens de lecture différent, sur deux registres serrés. L'examen attentif de ces annotations — leur module nettement réduit (lettres de 2 à 3 mm contre 4 à 5 mm pour le corps principal), leur inclinaison sensiblement moins marquée vers la droite, leurs habitudes de liaison différentes et leurs abréviations propres — établit sans contestation possible qu'elles sont d'une <em>seconde main</em>, distincte de celle qui a rédigé le corps du sermon. Il s'agit vraisemblablement d'un lecteur ecclésiastique — censeur diocésain, confrère plus expérimenté, supérieur hiérarchique — ayant exercé un contrôle critique sur le texte avant ou après sa première prédication.</p>
+
+<!-- ═══════════════════════════════════════════════ -->
+<h2>La question du ou des scripteurs — Un seul auteur pour les trois cahiers</h2>
+
+<p>La question de l'unité ou de la pluralité des mains est cruciale pour l'interprétation du corpus. Plusieurs analyses préliminaires ont proposé deux scripteurs distincts, invoquant notamment les différences de soin graphique entre les trois sermons. Cette hypothèse doit être soigneusement examinée et, au terme de l'analyse, rejetée pour ce qui concerne le corps des textes.</p>
+<p>En effet, si l'on compare systématiquement les formes letterales à travers les quarante folios, aucune discontinuité irréductible n'apparaît. La formation du <em>f</em> à descente sous la ligne de base avec boucle ascendante à gauche est identique dans les trois cahiers ; le <em>J</em> majuscule présente dans tous les cas une longue descente avec crochet terminal droit ; la liaison des groupes <em>ou</em> se fait sans levée de plume de la même façon ; le point-virgule est systématiquement tracé avec une virgule longue et allongée ; les majuscules ornées partagent les mêmes attaques en volute et les mêmes proportions. Ces constantes morphologiques, observées sur des milliers d'occurrences à travers plusieurs années de rédaction vraisemblable, ne peuvent être que les marques d'une seule et même main.</p>
+<p>Les variations observées — le <em>Ms. Brélévenez II</em> est le plus formel et le plus soigné, le <em>Ms. Brélévenez III</em> est le plus rapide et le plus cursif, le <em>Ms. Brélévenez I</em> est intermédiaire — s'expliquent entièrement par la variation normale d'un individu unique selon son état de fatigue, la disponibilité du temps, l'importance accordée à tel ou tel sermon dans sa pratique pastorale, et le moment de la rédaction. On retrouve des variations de cet ordre dans les manuscrits autographes de Bossuet ou de Massillon, sans que personne n'en ait conclu à une pluralité de mains.</p>
+
+<div class="cit">
+  <div class="cit-text">« Oui, mes frères, une partie de la gloire des saints, c'est de nous voir marcher après eux ; et il manque quelque chose à leur bonheur tant que nous sommes ici-bas dans les misères et les dangers. »</div>
+  <div class="cit-note">Passage du <em>Ms. Brélévenez I</em> (folio 2) illustrant le style rhétorique du scripteur : phrases amples à structure symétrique, opposition <em>ici-bas / au ciel</em>, interpellation directe de l'auditoire. La syntaxe et le lexique sont ici parfaitement caractéristiques.</div>
+  <div class="cit-ref">Ms. Brélévenez I, f° 2 r°</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<h2>Analyse linguistique et textuelle — Marqueurs chronologiques</h2>
+
+<p class="no-indent">Au-delà de la paléographie stricte, le texte lui-même contient des indices linguistiques et lexicaux qui permettent d'affiner la datation. Il convient ici de distinguer soigneusement les <em>marqueurs de formation</em> — qui datent la culture intellectuelle du scripteur, non nécessairement la rédaction — des <em>marqueurs d'usage</em>, qui témoignent de la langue vivante au moment de l'écriture.</p>
+
+<h3>Les marqueurs d'époque dans le lexique</h3>
+<p>Trois syntagmes lexicaux, présents dans le corpus, sont particulièrement discriminants pour la datation. Le premier est le terme <em>« esprits forts »</em>, employé au folio 7 du <em>Ms. Brélévenez II</em> pour désigner les libertins qui comptent sur un repentir de dernière heure sans avoir réformé leur vie. Ce syntagme, devenu d'usage courant dans la littérature apologétique catholique seulement à partir des années 1740–1760, en réaction aux <em>Lettres philosophiques</em> de Voltaire (1734) et à l'<em>Encyclopédie</em> (1751–1772), est caractéristique du vocabulaire polémique de la seconde moitié du XVIII<sup>e</sup> siècle.<sup>5</sup> Le second est le syntagme <em>« nos prétendus savants »</em> du <em>Ms. Brélévenez III</em>, qui appartient à la même veine anti-philosophique et connaît une distribution temporelle similaire. Le troisième est l'emploi du terme <em>« phases »</em> dans un sens métaphorique élargi, usage figuré qui ne se répand dans la prose française qu'après Buffon et l'<em>Encyclopédie</em>, c'est-à-dire après 1750.<sup>6</sup></p>
+
+<h3>Les erreurs latines — indices d'une latinité orale</h3>
+<p>L'original manuscrit du <em>Ms. Brélévenez I</em> porte, dès son incipit, deux variantes latines clairement visibles sur les photographies : <em>« quomiam »</em> pour <em>quoniam</em> (confusion vocalique dans la syllabe finale), et <em>« calis »</em> pour <em>cœlis</em> (réduction du diphtongue <em>œ</em> au simple <em>a</em>). Ces formes ne sont pas des fautes d'inattention ordinaires : la première est une haplographie récurrente dans les manuscrits de clercs qui citent de mémoire ; la seconde est un phénomène phonologique documenté dans le latin ecclésiastique pratiqué en Bretagne et en Normandie.<sup>7</sup> Ces indices révèlent un latiniste formé et compétent, qui possède ses citations de mémoire et les reproduit de façon cursive, avec les imperfections inhérentes à la récitation mentale — non un philologue qui consulte ses textes.</p>
+
+<h3>La structure rhétorique — une homilétique sulpicienne</h3>
+<p>La structure formelle des trois sermons obéit à un plan-type très précis, héritier direct de la tradition homiléticque sulpicienne telle qu'elle fut codifiée au grand séminaire de Saint-Sulpice à Paris sous l'influence de Jean-Jacques Olier (1608–1657) et diffusée dans l'ensemble du réseau séminariste français au XVII<sup>e</sup> et au XVIII<sup>e</sup> siècle : citation inaugurale scripturaire en latin, suivie immédiatement de sa traduction française ; bref exorde établissant le lien entre la citation et la situation de l'auditoire ; développement en deux ou trois points numérotés, séparés par des transitions clairement signalées ; application pastorale directe à la fin de chaque point ; péroraison suivie d'une prière ou d'une invocation. Cette structure est celle qu'on trouve dans les <em>Sermons</em> de Massillon (1663–1742), de Bourdaloue (1632–1704) et de Bossuet (1627–1704), dont les œuvres servaient de modèles dans les séminaires bretons jusque dans les premières décennies du XIX<sup>e</sup> siècle.<sup>8</sup></p>
+
+<!-- ═══════════════════════════════════════════════ -->
+<h2>Le contenu théologique et son contexte historique</h2>
+
+<h3>Trois thèmes, un même dessein pastoral</h3>
+<p>Les trois sermons abordent des thèmes complémentaires de la théologie morale et de l'eschatologie catholique post-tridentine. Le <em>Ms. Brélévenez I</em> traite de la difficulté et de la nécessité du salut — thème qui réfute la <em>présomption</em>, ce péché caractéristique de ceux qui comptent sur la miséricorde divine sans se donner la peine de mériter le salut —, puis se conclut par un sermon pour l'inauguration d'une statue et le dépôt de reliques dans une chapelle communautaire. Le <em>Ms. Brélévenez II</em> est un sermon classique sur la mort universelle et ses conséquences éternelles, fondé sur le verset de l'Épître aux Hébreux. Le <em>Ms. Brélévenez III</em> est un sermon eucharistique d'une richesse théologique remarquable, exposant la présence réelle, sa supériorité sur tous les miracles de l'Ancien Testament, et appelant les fidèles à ne pas se priver du bonheur de la communion.</p>
+
+<h3>La clé du corpus : le sermon d'inauguration</h3>
+<p>Le sermon annexe du folio 13 du <em>Ms. Brélévenez I</em> est le document le plus informatif pour la datation et la localisation du corpus. Le prédicateur s'adresse à une assemblée réunie pour une cérémonie solennelle dans <em>« la chapelle de notre bienheureuse communauté »</em> afin d'y inaugurer la statue d'une sainte et d'y déposer des reliques. L'expression <em>« notre bienheureuse communauté »</em> est une formule canonique désignant une communauté religieuse régulière possédant sa propre chapelle claustraire. Le ton du sermon est d'une émotion intense, parfaitement intelligible comme l'expression d'une communauté qui célèbre le retour à une vie normale après une période de persécution et de dispersion révolutionnaire.</p>
+<p>La Révolution française a en effet provoqué entre 1789 et 1801 la dispersion forcée de toutes les communautés religieuses, la confiscation de leurs biens et de leurs chapelles, et la destruction ou la dispersion de leurs reliques et de leurs statues. La reconstruction d'un espace de culte communautaire, l'inauguration d'une nouvelle statue et le dépôt de reliques constituent, dans ce contexte, un acte de restauration symbolique puissant. Ce scénario s'inscrit dans la période qui suit le Concordat de 1801, au cours de laquelle les communautés religieuses bretonnes commencèrent à se reconstituer progressivement ; si les premières cérémonies de restauration sont possibles dès 1802–1808, une inauguration solennelle avec bénédiction de reliques serait plus vraisemblable après 1805–1808 et plus assurée encore après 1814.</p>
+
+<div class="cit">
+  <div class="cit-text">« La vénération que nous aurons pour ses précieuses reliques placées dans la chapelle de notre bienheureuse communauté sera un titre à l'heureuse influence de sa divine protection. »</div>
+  <div class="cit-note">Sermon d'inauguration, folio 13 du <em>Ms. Brélévenez I</em>. La mention de la « bienheureuse communauté » et de la « chapelle » identifie un contexte conventuel précis, différent de la prédication paroissiale ordinaire. Le ton de gratitude et d'émotion est caractéristique d'une restauration post-révolutionnaire.</div>
+  <div class="cit-ref">Ms. Brélévenez I, f° 13 r°</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<h2>Datation — Synthèse et arbitrage</h2>
+
+<p class="no-indent">Les analyses précédentes permettent désormais de confronter les datations proposées par diverses expertises antérieures et d'en arbitrer la vraisemblance au regard de l'ensemble des preuves.</p>
+
+<h3>La datation : marqueurs matériels et preuves textuelles</h3>
+<p>La datation du corpus repose sur deux catégories d'indices de nature différente, dont le croisement permet d'établir une fourchette de rédaction crédible.</p>
+<p>Les indices matériels — vieillissement du papier, brunissement de l'encre ferro-gallique, usage de la plume d'oie — sont des estimations par nature approximatives. Le degré de jaunissement du papier et le brunissement de l'encre sont compatibles avec un dépôt datant de 180 à 230 ans, soit une rédaction comprise entre 1795 et 1845. La plume d'oie, restée d'usage dans les presbytères bretons bien après l'apparition des plumes d'acier Gillott dans les années 1830, ne constitue pas un terminus ante quem utilisable. Ces données matérielles délimitent un cadre large ; elles ne permettent pas à elles seules de localiser précisément la rédaction dans ce cadre.</p>
+<p>Les preuves textuelles internes sont d'une tout autre fiabilité. Trois sermons contiennent des références à des événements datés qui fournissent des <em>termini post quem</em> incontestables. Le sermon XVII mentionne explicitement le choléra de « 1832 et 1833 » et les « chemins de fer » comme réalité contemporaine connue de l'auditoire — ce document ne peut être antérieur à 1833 ; la référence aux chemins de fer suggère vraisemblablement une date postérieure à 1837. Le sermon XXV porte dans son texte latin la date du 18 juillet 1833 comme décision doctrinale approuvée par l'évêque de Saint-Brieuc. Le sermon XXIV cite la série des attentats contre Louis-Philippe — Fieschi (1835), Alibaud (1836), Meunier (1836), Darmès (1840) — et ne peut être antérieur à 1840. Ces trois bornes convergent pour situer le cœur de la production du corpus dans les années 1833–1845. Pour les sermons dépourvus de marqueur interne précis, la fourchette matérielle reste la référence, avec une borne inférieure probable vers 1800–1810 pour les pièces les plus anciennes du corpus.</p>
+<p>Il convient de distinguer soigneusement la date de formation du scripteur — qui remonte vraisemblablement aux premières décennies du XIX<sup>e</sup> siècle — de la date de rédaction des sermons, qui s'étale sur plusieurs décennies. La rhétorique sulpicienne et la théologie tridentine du corpus datent la formation de ses auteurs, non leurs cahiers.</p>
+
+<table class="synth">
+  <tr><td class="sk">Datation</td><td class="sv"><strong>1800–1845</strong> (fourchette révisée de rédaction). Centre de gravité probable : <strong>1820–1845</strong>. Trois sermons datés de l'intérieur : XVII et XXV après 1833, XXIV après 1840. Formation du  scripteur : vraisemblablement 1800–1820.</td></tr>
+  <tr><td class="sk">Instrument</td><td class="sv"><strong>Plume d'oie taillée en biseau</strong>, à bec fendu flexible. Modulations de plein et délié organiques incompatibles avec une plume d'acier. Encrier séparé avec trempage répété.</td></tr>
+  <tr><td class="sk">Encre</td><td class="sv"><strong>Ferro-gallique</strong>, teinte brun-noir à brun ambré par oxydation des sels ferreux. Vieillissement compatible avec une rédaction entre 1800 et 1850. Correction au folio 5 Ms. I d'encre légèrement plus foncée (relecture différée).</td></tr>
+  <tr><td class="sk">Support</td><td class="sv"><strong>Papier vergé artisanal</strong> (Ms. I et II), <strong>papier vergé réglé</strong> (Ms. III). Grammage moyen (70–90 g/m²). Jaunissement et foxing compatibles avec 180–230 ans d'exposition en milieu humide.</td></tr>
+  <tr><td class="sk">Écriture</td><td class="sv"><strong>Groupe A (français) :</strong> cursive française lettrée semi-formelle, inclinaison 10–20° droite, absence totale du <em>s</em> long, lettrines ornées systématiques. <strong>Groupe B (breton) :</strong> registre graphique distinct, module plus compact, <em>b</em> à haste droite sans boucle, majuscules de morphologie différente.</td></tr>
+  <tr><td class="sk">Formation</td><td class="sv"><strong>Séminaire diocésain breton</strong> (Tréguier ou Saint-Brieuc), vraisemblablement début XIX<sup>e</sup> siècle. Rhétorique sulpicienne, théologie tridentine, latin courant de qualité, culture patristique (Pères du désert, Jean Chrysostome, Paul, Bernard). Bilinguisme breton-français actif.</td></tr>
+  <tr><td class="sk">Condition</td><td class="sv"><strong>Prêtre du clergé séculier du Trégor</strong>, probablement curé ou vicaire, actif(s) principalement sous la Monarchie de Juillet (1830–1848).</td></tr>
+  <tr><td class="sk">Statut docs.</td><td class="sv"><strong>Cahiers de travail homiléticques</strong> semi-définitifs. Destinés à la prédication effective en chaire (paroisse) et en chapelle (communauté). Non reliés, utilisés couramment, d'où la dégradation différentielle des derniers folios.</td></tr>
+</table>
+
+<!-- ═══════════════════════════════════════════════ -->
+<h2>Portrait du scripteur — Formation, tempérament, spiritualité</h2>
+
+<p>L'ensemble des éléments recueillis converge vers le portrait d'un homme remarquable dans son contexte : prêtre breton de la première moitié du XIX<sup>e</sup> siècle, formé à une époque où la culture ecclésiastique française était encore profondément imprégnée du Grand Siècle, mais confronté dans son ministère quotidien aux défis intellectuels et pastoraux des décennies post-révolutionnaires.</p>
+<p>Sa formation est celle d'un humaniste chrétien complet. Il maîtrise le latin de façon active — il cite de mémoire, et ses rares imperfections (le <em>quomiam</em>, le <em>calis</em>) sont celles d'un locuteur oral qui n'a pas sous les yeux le texte qu'il cite, non celles d'un ignorant. Sa culture patristique est large : il convoque sans effort Jean Chrysostome, Augustin, Bernard de Clairvaux, Paul, les Pères du désert (Antoine, Hilarion, Arsène). Sa connaissance de l'Écriture est intériorisée au point que les citations surgissent naturellement dans le tissu de la prose, sans rupture de style ni d'élan.</p>
+<p>Son tempérament de prédicateur est celui d'un orateur de conviction, non d'un scribe mécanique. La richesse des figures de style — l'<em>hypotypose</em> qui fait voir le naufrage en pleine mer ou le champ de bataille, l'<em>apostrophe</em> aux martyrs et aux vierges, la <em>gradation ascendante</em> qui mène du sol de l'église jusqu'au troisième Ciel avant de revenir sur l'autel — révèle un homme qui pense en images et qui sait que ses auditeurs ont besoin d'être émus avant d'être convaincus.</p>
+
+<div class="cit">
+  <div class="cit-text">« Oui, montez jusqu'aux portes du ciel, montez jusque dans le sein de Dieu ; montez avec le grand apôtre jusqu'au troisième ciel ; arrêtez-vous un instant ; regardez attentivement et je vous montrerai ensuite sur nos autels ce que vous aurez le plus admiré dans le Paradis. »</div>
+  <div class="cit-note">Ms. Brélévenez III, folio 10 — péroraison du sermon sur l'Eucharistie. Ce mouvement ascendant-descendant, conduisant l'auditeur du plancher de l'église jusqu'au Paradis avant de le ramener à l'hostie sur l'autel, est la marque d'un prédicateur de talent, maîtrisant les ressorts de l'<em>ekphrasis</em> mystique héritée des <em>Exercices</em> de saint Ignace.</div>
+  <div class="cit-ref">Ms. Brélévenez III, f° 10 r°</div>
+</div>
+
+<p>Sa spiritualité, enfin, est celle d'un mystique pastoral — non d'un contemplatif retiré du monde, mais d'un homme qui ne peut parler de Dieu sans éprouver ce qu'il dit, et dont la conviction profonde transparaît dans chaque mouvement de la plume. L'insistance sur la présence réelle dans l'Eucharistie, sur la récompense céleste comme moteur de la vie chrétienne, sur la mort comme réalité incontournable à laquelle on ne saurait s'aveugler — ces trois thèmes ne sont pas des exercices académiques mais des convictions de vie.</p>
+
+<!-- ═══════════════════════════════════════════════ -->
+<h2>Conclusions et perspectives de recherche</h2>
+
+<p>L'analyse paléographique, codicologique, linguistique et théologique du corpus de Brélévenez dessine le portrait d'un fonds homilétique. Ces  cahiers ne sont pas l'héritage figé d'un clergé survivant à la Révolution, mais le produit vivant d'un prédicateur actif sous la Monarchie de Juillet, probablement entre les années 1820 et 1845, confronté dans son ministère quotidien aux défis idéologiques, sociaux et pastoraux de son temps. La plume d'oie, l'encre ferro-gallique et la rhétorique sulpicienne ne sont pas ici les signes d'un archaïsme : ce sont les outils ordinaires d'hommes d'Église qui prêchaient en français et en breton depuis les chaires du Trégor, au milieu d'un monde que le fouriérisme, le saint-simonisme et les régicides commençaient à inquiéter profondément.</p>
+<p>Les marqueurs textuels internes fournissent les ancrages chronologiques les plus solides. Le choléra de 1832–1833 nommé dans le sermon XVII, la date du 18 juillet 1833 inscrite dans le corps du sermon XXV, les attentats successifs contre Louis-Philippe culminant avec Darmès en 1840 dans le sermon XXIV : ces trois preuves internes, indépendantes les unes des autres, convergent pour établir que la rédaction du corpus s'est prolongée au moins jusqu'en 1840, et vraisemblablement au-delà. Les données matérielles — vieillissement du papier, brunissement de l'encre, usage de la plume d'oie — corroborent cette fourchette sans la contredire.</p>
+
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- PARTIE II — PRÉSENTATION DU CORPUS COMPLET                -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<div class="partie-sep">
+  <div class="partie-sep-rule"></div>
+  <div class="partie-sep-label">Seconde partie</div>
+  <div class="partie-sep-title">Corpus complet — Les  manuscrits suivants</div>
+  <div class="partie-sep-sub">Présentation des manuscrits suivants du fonds de Brélévenez<br>
+  Un scripteur probable ·</div>
+  <span class="partie-sep-orn">✦</span>
+</div>
+
+<p class="no-indent">Les  manuscrits présentés dans cette seconde partie appartiennent au même corpus homilétique que les trois sermons analysés dans la première partie. </p>
+
+<!-- ─── TABLE DES SERMONS ─── -->
+<div class="doc-links" style="margin: 40px 0 48px;">
+  <div class="doc-links-title">Table des vingt-huit sermons du corpus — Index général</div>
+  <table class="synth" style="margin: 10px 0 0;">
+    <tr>
+      <td class="sk" style="width:90px;">Ms. I</td>
+      <td class="sv">
+        <a href="#ms-i" style="color:var(--ink);text-decoration:none;border-bottom:.5px dotted var(--ink);">Sermon sur la sainteté et le salut — <em>Gaudete et exsultate</em></a>
+      </td>
+    </tr>
+    <tr>
+      <td class="sk">Ms. II</td>
+      <td class="sv">
+        <a href="#ms-ii" style="color:var(--ink);text-decoration:none;border-bottom:.5px dotted var(--ink);">Sermon sur la mort universelle — <em>Statutum est hominibus semel mori</em></a>
+      </td>
+    </tr>
+    <tr>
+      <td class="sk">Ms. III</td>
+      <td class="sv">
+        <a href="#ms-iii" style="color:var(--ink);text-decoration:none;border-bottom:.5px dotted var(--ink);">Sermon sur la Divine Eucharistie — <em>Memoriam fecit mirabilium suorum</em></a>
+      </td>
+    </tr>
+    <tr>
+      <td class="sk">Ms. IV</td>
+      <td class="sv">
+        <a href="#ms-iv" style="color:var(--ink);text-decoration:none;border-bottom:.5px dotted var(--ink);">Sermon sur la Mort — <em>Statutum est hominibus semel mori</em></a>
+      </td>
+    </tr>
+    <tr>
+      <td class="sk">Ms. V</td>
+      <td class="sv">
+        <a href="#ms-v" style="color:var(--ink);text-decoration:none;border-bottom:.5px dotted var(--ink);">Sermon sur l'Emploi du Temps — <em>Dum tempus habemus operemur bonum</em></a>
+      </td>
+    </tr>
+    <tr>
+      <td class="sk">Ms. VI</td>
+      <td class="sv">
+        <a href="#ms-vi" style="color:var(--ink);text-decoration:none;border-bottom:.5px dotted var(--ink);">Sermon sur la Divine Eucharistie — <em>Memoriam fecit mirabilium suorum</em></a>
+      </td>
+    </tr>
+    <tr>
+      <td class="sk">Ms. VII</td>
+      <td class="sv">
+        <a href="#ms-vii" style="color:var(--ink);text-decoration:none;border-bottom:.5px dotted var(--ink);">Sermon sur la Parole de Dieu — <em>Ego vox clamantis in deserto</em></a>
+      </td>
+    </tr>
+    <tr>
+      <td class="sk">Ms. VIII</td>
+      <td class="sv">
+        <a href="#ms-viii" style="color:var(--ink);text-decoration:none;border-bottom:.5px dotted var(--ink);">Sermon sur la foi et les bonnes œuvres — <em>Ecce pono in Sion lapidem angularem</em></a>
+      </td>
+    </tr>
+    <tr>
+      <td class="sk">Ms. IX</td>
+      <td class="sv">
+        <a href="#ms-ix" style="color:var(--ink);text-decoration:none;border-bottom:.5px dotted var(--ink);">Discours sur l'Excellence et l'Établissement du Christianisme — <em>In quo vivimus, movemur et sumus</em></a>
+      </td>
+    </tr>
+    <tr>
+      <td class="sk">Ms. X</td>
+      <td class="sv">
+        <a href="#ms-x" style="color:var(--ink);text-decoration:none;border-bottom:.5px dotted var(--ink);">Sermon sur les Dangers du Monde et la Barque de l'Église — <em>Qui amat periculum, peribit in illo</em></a>
+      </td>
+    </tr>
+    <tr>
+      <td class="sk">Ms. XI</td>
+      <td class="sv">
+        <a href="#ms-xi" style="color:var(--ink);text-decoration:none;border-bottom:.5px dotted var(--ink);">Sermon sur la contrition — <em>Dominus quoque transtulit peccatum tuum</em></a>
+      </td>
+    </tr>
+    <tr>
+      <td class="sk">Ms. XII</td>
+      <td class="sv">
+        <a href="#ms-xii" style="color:var(--ink);text-decoration:none;border-bottom:.5px dotted var(--ink);">Sermon sur le grand commandement de l'amour de Dieu — <em>Diliges Dominum Deum tuum ex toto corde tuo</em></a>
+      </td>
+    </tr>
+    <tr>
+      <td class="sk">Ms. XIII</td>
+      <td class="sv">
+        <a href="#ms-xiii" style="color:var(--ink);text-decoration:none;border-bottom:.5px dotted var(--ink);">Sermon sur la foi, les mystères de la religion et la vérité de l'Église — <em>Sine fide impossibile est placere Deo</em></a>
+      </td>
+    </tr>
+    <tr>
+      <td class="sk">Ms. XIV</td>
+      <td class="sv">
+        <a href="#ms-xiv" style="color:var(--ink);text-decoration:none;border-bottom:.5px dotted var(--ink);">Sermon sur les tribulations de la vie — <em>Beati qui lugent</em></a>
+      </td>
+    </tr>
+    <tr>
+      <td class="sk">Ms. XV</td>
+      <td class="sv">
+        <a href="#ms-xv" style="color:var(--ink);text-decoration:none;border-bottom:.5px dotted var(--ink);">Sermon sur le petit nombre des élus — <em>Multi sunt vocati, pauci vero electi</em></a>
+      </td>
+    </tr>
+    <tr>
+      <td class="sk">Ms. XVI</td>
+      <td class="sv">
+        <a href="#ms-xvi" style="color:var(--ink);text-decoration:none;border-bottom:.5px dotted var(--ink);">Sermon sur l'amour de Dieu — <em>Diliges Dominum Deum tuum ex toto corde tuo</em></a>
+      </td>
+    </tr>
+    <tr>
+      <td class="sk">Ms. XVII</td>
+      <td class="sv">
+        <a href="#ms-xvii" style="color:var(--ink);text-decoration:none;border-bottom:.5px dotted var(--ink);">Sermon sur l'aumône — <em>Date et dabitur vobis</em></a>
+      </td>
+    </tr>
+    <tr>
+      <td class="sk">Ms. XVIII</td>
+      <td class="sv">
+        <a href="#ms-xviii" style="color:var(--ink);text-decoration:none;border-bottom:.5px dotted var(--ink);">Sermon sur le service de Dieu dans la jeunesse — <em>Memento creatoris tui in diebus juventutis tuae</em></a>
+      </td>
+    </tr>
+    <tr>
+      <td class="sk">Ms. XIX</td>
+      <td class="sv">
+        <a href="#ms-xix" style="color:var(--ink);text-decoration:none;border-bottom:.5px dotted var(--ink);">Sermon sur la nécessité de la pénitence — <em>Poenitentiam agite, appropinquavit enim regnum coelorum</em></a>
+      </td>
+    </tr>
+    <tr>
+      <td class="sk">Ms. XX</td>
+      <td class="sv">
+        <a href="#ms-xx" style="color:var(--ink);text-decoration:none;border-bottom:.5px dotted var(--ink);">Sermon pour une première communion — <em>Sinite pueros venire ad me</em></a>
+      </td>
+    </tr>
+    <tr>
+      <td class="sk">Ms. XXI</td>
+      <td class="sv">
+        <a href="#ms-xxi" style="color:var(--ink);text-decoration:none;border-bottom:.5px dotted var(--ink);">Sermon sur la voie étroite et la prière — <em>Quam arcta via, quae ducit ad vitam !</em></a>
+      </td>
+    </tr>
+    <tr>
+      <td class="sk">Ms. XXII</td>
+      <td class="sv">
+        <a href="#ms-xxii" style="color:var(--ink);text-decoration:none;border-bottom:.5px dotted var(--ink);">Sermon sur le péché mortel — <em>Similes estis sepulchris dealbatis</em></a>
+      </td>
+    </tr>
+    <tr>
+      <td class="sk">Ms. XXIII</td>
+      <td class="sv">
+        <a href="#ms-xxiii" style="color:var(--ink);text-decoration:none;border-bottom:.5px dotted var(--ink);">Sermon pour la fête du Sacré-Cœur — <em>Erit cor meum ibi cunctis diebus</em></a>
+      </td>
+    </tr>
+    <tr>
+      <td class="sk">Ms. XXIV</td>
+      <td class="sv">
+        <a href="#ms-xxiv" style="color:var(--ink);text-decoration:none;border-bottom:.5px dotted var(--ink);">Sermon sur les bienfaits miraculeux du christianisme — <em>Venite ad me omnes qui laboratis et onerati estis</em></a>
+      </td>
+    </tr>
+    <tr>
+      <td class="sk">Ms. XXV</td>
+      <td class="sv">
+        <a href="#ms-xxv" style="color:var(--ink);text-decoration:none;border-bottom:.5px dotted var(--ink);">Traité de théologie morale — <em>De Præceptis Decalogi · De Spe · De Religione</em></a>
+      </td>
+    </tr>
+    <tr>
+      <td class="sk">Ms. XXVI</td>
+      <td class="sv">
+        <a href="#ms-xxvi" style="color:var(--ink);text-decoration:none;border-bottom:.5px dotted var(--ink);">Sermon sur la Confirmation — <em>Ecce evangeliso vobis gaudium magnum</em></a>
+      </td>
+    </tr>
+    <tr>
+      <td class="sk">Ms. XXVII</td>
+      <td class="sv">
+        <a href="#ms-xxvii" style="color:var(--ink);text-decoration:none;border-bottom:.5px dotted var(--ink);">Sermon sur la tiédeur — <em>Spiritu ferventes, Domino servientes</em></a>
+      </td>
+    </tr>
+    <tr>
+      <td class="sk">Ms. XXVIII</td>
+      <td class="sv">
+        <a href="#ms-xxviii" style="color:var(--ink);text-decoration:none;border-bottom:.5px dotted var(--ink);">Sermon sur la charité fraternelle — <em>Diliges proximum tuum sicut te ipsum</em></a>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+<!-- ─── MS. BRÉLÉVENEZ IV ─── -->
+<div class="ms-notice" id="ms-iv">
+  <div class="ms-notice-header">
+    <span class="ms-number">Ms. Brélévenez IV</span>
+    <span class="ms-title">Sermon sur la Mort — <em>Statutum est hominibus semel mori</em></span>
+  </div>
+  <img class="ms-photo" src="assets/macro_sermon4.jpg" alt="Macrophotographie Ms. Brélévenez IV">
+  <div class="ms-photo-caption">Gros plan — folio recto</div>
+  <div class="ms-links">
+    <a class="ms-link" href="assets/sermon_4_compressed.pdf"><span class="ms-link-icon">☞</span> Manuscrit original (PDF)</a>
+    <a class="ms-link" href="assets/Sermon4retranscrit.html"><span class="ms-link-icon">☞</span> Transcription intégrale (HTML)</a>
+  </div>
+  <p class="ms-analyse">Ce sermon sur la mort, construit autour du verset d'Hébreux 9, 27 (<em>Statutum est hominibus semel mori</em>), constitue un texte ambitieux et structuré. Divisé en cinq parties distinctes — la nécessité de mourir, l'incertitude de l'heure, la préparation à bien mourir, la pensée de la mort comme discipline spirituelle, et le jugement après la mort — il déploie une rhétorique de la <em>memento mori</em> héritée de la grande tradition homilétique française du XVII<sup>e</sup> siècle. Le prédicateur multiplie les références scripturaires (Prophètes, Psaumes, Épîtres pauliniennes) et les exemples tirés de l'histoire sainte (Alexandre le Grand, Balthasar, Antiochus) ou de la vie des Pères du désert (Antoine, Hilarion, Arsène). L'argumentation est à la fois dogmatique (la mort comme conséquence du péché originel), ascétique (la méditation de la mort comme remède aux passions) et eschatologique (la mort comme passage vers le jugement particulier et l'éternité). On y retrouve une conception augustinienne de la condition humaine, associée à une spiritualité du détachement qui évoque saint Bernard et l'école française de spiritualité. Malgré la dimension macabre et pénitentielle du propos, le ton demeure pastoral : il s'agit moins d'épouvanter que de susciter une vigilance lucide et confiante face à la finitude. L'appendice manuscrit, ajouté en marge du texte principal, contient des fragments d'exhortations adressées à des paroissiens tentés par l'anticléricalisme ou l'indifférence religieuse — témoignage précieux de tensions sociales et idéologiques traversant la Bretagne rurale au XVIII<sup>e</sup> siècle ou au début du XIX<sup>e</sup>.</p>
+  <div class="ms-analyse-tech"><strong>Note technique :</strong> Papier vergé de bonne qualité, grammage assez épais, légèrement jauni avec quelques rousseurs localisées. Encre ferro-gallique brun foncé, bien conservée malgré une légère oxydation en bordure de certains folios. L'écriture est cursive, rapide et relativement régulière, avec des jambages allongés caractéristiques d'une main exercée du XVIII<sup>e</sup> siècle finissant. Les abréviations sont nombreuses, notamment pour les citations latines (<em>qt</em> pour <em>quod</em>, ligatures <em>ꝙ</em> pour <em>que</em>, tilde pour les nasales). Présence de titres de sections soulignés à l'encre. Les notes marginales de l'appendice sont rédigées dans une cursive plus serrée et inclinée, suggérant une rédaction postérieure ou des ajouts lors d'une réutilisation du sermon. Quelques taches d'encre et corrections par rature témoignent d'un texte de travail, probablement relu et annoté à plusieurs reprises.</div>
+</div>
+
+<!-- ─── MS. BRÉLÉVENEZ V ─── -->
+<div class="ms-notice" id="ms-v">
+  <div class="ms-notice-header">
+    <span class="ms-number">Ms. Brélévenez V</span>
+    <span class="ms-title">Sermon sur l'Emploi du Temps — <em>Dum tempus habemus operemur bonum</em></span>
+  </div>
+  <img class="ms-photo" src="assets/macro_sermon5.jpg" alt="Macrophotographie Ms. Brélévenez V">
+  <div class="ms-photo-caption">Gros plan — passage médian</div>
+  <div class="ms-links">
+    <a class="ms-link" href="assets/sermon_5_compressed.pdf"><span class="ms-link-icon">☞</span> Manuscrit original (PDF)</a>
+    <a class="ms-link" href="assets/Sermon5retranscrit.html"><span class="ms-link-icon">☞</span> Transcription intégrale (HTML)</a>
+  </div>
+  <p class="ms-analyse">Ce sermon moral sur l'emploi du temps, fondé sur Galates 6, 10 (<em>Dum tempus habemus operemur bonum</em>), développe une méditation ascétique sur la brièveté de la vie et l'urgence du salut. La structure argumentative est rigoureuse : après avoir établi la valeur théologique du temps (créature divine, prix du sang du Christ), le prédicateur dénonce l'aveuglement des mondains qui dilapident ce capital spirituel, puis insiste sur l'irréversibilité du temps perdu — thème augustinien par excellence. La référence à Marie-Madeleine et à David illustre une tension théologique subtile : si la pénitence efface le péché, elle ne peut annuler le fait historique de l'avoir commis (<em>fuisse in aeternum manet</em>). Cette distinction entre le pardon divin et l'inscription indélébile du péché dans l'histoire de l'âme révèle une conscience aiguë de la temporalité comme dimension constitutive de la destinée humaine. Le sermon mobilise une rhétorique de l'urgence (<em>tempus breve est, tempus non erit amplius</em>) qui vise à provoquer la conversion immédiate. On y retrouve les grands lieux communs de la prédication classique sur la fugacité du temps, mais traités avec une densité scripturaire remarquable et une progression dramatique qui culmine dans l'image du jugement dernier et de la balance divine. L'exhortation finale reprend la citation augustinienne célèbre sur la coopération nécessaire de l'homme à son salut, inscrivant le propos dans une théologie de la grâce équilibrée entre souveraineté divine et libre arbitre.</p>
+  <div class="ms-analyse-tech"><strong>Note technique :</strong> Papier vergé de qualité correcte, présentant un jaunissement modéré assez uniforme. Encre ferro-gallique brune, bien conservée, sans oxydation excessive. L'écriture est une cursive française élégante et fluide du XVIII<sup>e</sup> siècle, avec des pleins et déliés bien contrastés révélant une maîtrise calligraphique certaine. Les hampes ascendantes sont hautes et gracieuses, particulièrement visibles dans les lettres <em>h</em> et <em>l</em>. Les majuscules sont travaillées avec soin, notamment le <em>P</em> de « Porte » qui présente une boucle ample et décorative. L'inclinaison de l'écriture est constante (environ 65-70°), témoignant d'une main disciplinée et habituée à l'écriture soutenue. Les mots latins (<em>hora est jam</em>) sont intégrés au flux de l'écriture française sans changement de style notable, signe d'une culture latine parfaitement assimilée. Les liaisons entre lettres sont souples et naturelles, créant un rythme visuel harmonieux. On observe quelques variations d'intensité dans le tracé suggérant des pauses dans la rédaction, mais l'ensemble reste homogène. La disposition est aérée avec des interlignes généreux, facilitant la lecture — caractéristique d'un document destiné peut-être à servir de support pour la prédication orale.</div>
+</div>
+
+
+
+
+<!-- ─── MS. BRÉLÉVENEZ VI ─── -->
+<div class="ms-notice" id="ms-vi">
+  <div class="ms-notice-header">
+    <span class="ms-number">Ms. Brélévenez VI</span>
+    <span class="ms-title">Sermon sur la Divine Eucharistie — <em>Memoriam fecit mirabilium suorum</em></span>
+  </div>
+  <img class="ms-photo" src="assets/macro_sermon6.jpg" alt="Macrophotographie Ms. Brélévenez VI">
+  <div class="ms-photo-caption">Gros plan — folio 1 recto</div>
+  <div class="ms-links">
+    <a class="ms-link" href="assets/sermon_6_compressed.pdf"><span class="ms-link-icon">☞</span> Manuscrit original (PDF)</a>
+    <a class="ms-link" href="assets/Sermon6retranscrit.html"><span class="ms-link-icon">☞</span> Transcription intégrale (HTML)</a>
+  </div>
+  <p class="ms-analyse">Ce sermon eucharistique, fondé sur le Psaume 110 (<em>Memoriam fecit mirabilium suorum</em>), déploie une théologie de la présence réelle remarquablement construite. Le prédicateur trace une histoire sacrée de la présence divine, depuis le paradis terrestre jusqu'à l'institution eucharistique, présentée comme l'accomplissement des promesses faites aux Patriarches. L'argumentation procède par une double amplification : d'abord l'anéantissement progressif de Dieu (de la création à l'Incarnation, puis à l'Eucharistie), ensuite la comparaison systématique entre les privilèges de l'Ancien Testament et ceux du chrétien communiant. Le ton est celui de l'émerveillement théologique tempéré par une exhortation morale finale. On note l'absence de polémique anti-protestante explicite, mais une insistance marquée sur la réalité substantielle de la présence (<em>réellement avec son corps, son sang, son âme, sa Divinité</em>). La référence à saint Jean Chrysostome et l'usage de citations latines intégrées au discours français témoignent d'une prédication savante, destinée probablement à un auditoire lettré ou clerical. L'appel final à la communion fréquente (<em>chaque jour nous pouvons jouir</em>) reflète les orientations pastorales post-tridentines encourageant la pratique eucharistique régulière.</p>
+  <div class="ms-analyse-tech"><strong>Note technique :</strong> Papier vergé de belle qualité, grammage assez épais, présentant un jaunissement uniforme caractéristique d'un vieillissement naturel. Encre ferro-gallique d'un brun profond virant légèrement au sépia, montrant un bon état de conservation avec une oxydation modérée et régulière. L'écriture est une cursive française du XVIII<sup>e</sup> siècle, élégante et maîtrisée, avec des pleins et déliés bien marqués révélant l'usage d'une plume d'oie taillée avec soin. Les hampes sont hautes et les jambages bien descendus, conférant au texte une verticalité élancée. Les majuscules présentent un travail ornemental sobre, notamment le J initial de « Je n'entreprends ». Les liaisons entre lettres sont fluides et régulières, témoignant d'une main exercée à l'écriture de chancellerie. On observe quelques abréviations conventionnelles et des mots soulignés pour marquer l'emphase oratoire. La mise en page est soignée, avec des marges respectées et une justification à droite relativement régulière pour une écriture manuscrite.</div>
+</div>
+
+<!-- ─── MS. BRÉLÉVENEZ VII ─── -->
+<div class="ms-notice" id="ms-vii">
+  <div class="ms-notice-header">
+    <span class="ms-number">Ms. Brélévenez VII</span>
+    <span class="ms-title">Sermon sur la Parole de Dieu — <em>Ego vox clamantis in deserto</em></span>
+  </div>
+  <img class="ms-photo" src="assets/macro_sermon7a.jpg" alt="Macrophotographie Ms. Brélévenez VII">
+  <div class="ms-photo-caption">Gros plan — détails de l'écriture</div>
+  <div class="ms-links">
+    <a class="ms-link" href="assets/sermon_7_compressed.pdf"><span class="ms-link-icon">☞</span> Manuscrit original (PDF)</a>
+    <a class="ms-link" href="assets/Sermon7retranscrit.html"><span class="ms-link-icon">☞</span> Transcription intégrale (HTML)</a>
+  </div>
+  <p class="ms-analyse">Ce sermon méta-homilétique, fondé sur Jean 1, 23 (<em>Ego vox clamantis in deserto</em>), constitue une pièce rare dans le corpus : une prédication sur la prédication elle-même, une réflexion sur les conditions d'efficacité de la parole divine. Le prédicateur y développe une ecclésiologie de la parole inspirée de saint Paul, établissant une analogie audacieuse entre le sacrement eucharistique et le « sacrement » de la prédication (<em>praeditatio evangelica est quasi sacramentum et mysterium</em>). Dans les deux cas, l'apparence sensible (les espèces du pain, la voix de l'homme) cache une réalité divine que seule la foi discerne. L'argumentation déploie une double critique : celle de l'auditoire mondain qui réduit le sermon à un discours humain soumis à la critique esthétique, et celle, sous-jacente, d'une éloquence sacrée trop soucieuse de plaire (<em>factus sum velut aes sonans aut cymbalum tinniens</em>). Le ton oscille entre dignité sacerdotale et plainte amère : le prédicateur se sent réduit au rôle de « discoureur frivole » (<em>discursores frivoles</em>). La référence à l'échec relatif de Jean-Baptiste puis de saint Paul (à Lystres) sert de consolation théologique face à l'inefficacité pastorale. On note l'absence de développement doctrinal au profit d'une exhortation morale centrée sur les dispositions intérieures de l'auditeur : foi, humilité, docilité. Ce sermon révèle les tensions du ministère de la parole au XVIII<sup>e</sup> siècle, pris entre exigences rhétoriques de la société lettrée et finalité spirituelle de la conversion.</p>
+  
+  <img class="ms-photo" src="assets/macro_sermon7b.jpg" alt="Macrophotographie Ms. Brélévenez VII"><div class="ms-analyse-tech"><strong>Note technique :</strong> Papier vergé de qualité moyenne à médiocre, présentant un brunissement très prononcé avec des zones d'oxydation importantes et des taches d'humidité anciennes particulièrement visibles sur les bords et dans les angles (voir la photographie de la première page où le papier montre des dégradations importantes sur la tranche droite). Encre ferro-gallique brune fortement oxydée, ayant par endroits traversé le papier et créé des halos au verso. L'écriture est une cursive française du XVIII<sup>e</sup> siècle, rapide et serrée, avec des variations notables de module et d'inclinaison suggérant une rédaction en plusieurs séances. Les hampes et jambages sont moins disciplinés que dans d'autres manuscrits du corpus, avec des boucles parfois exagérées (notamment le <em>C</em> initial de « Chargé » qui présente une volute ample et ornementale). On observe de nombreuses abréviations et quelques corrections interlinéaires. La majuscule « Ambassadeur » (visible sur la première macrophotographie) montre un travail calligraphique soigné malgré la rapidité générale de l'écriture. Le papier présente des vergeures bien visibles et une chaînette régulière caractéristique des papeteries de l'époque. La présence d'une couture visible sur certaines photographies indique que les feuillets ont été assemblés, probablement après la rédaction. L'état de conservation général est moyen, avec des fragilités mécaniques importantes sur les bords.</div>
+</div>
+
+<!-- ─── MS. BRÉLÉVENEZ VIII ─── -->
+<div class="ms-notice" id="ms-viii">
+  <div class="ms-notice-header">
+    <span class="ms-number">Ms. Brélévenez VIII</span>
+    <span class="ms-title">Sermon sur la foi et les bonnes œuvres — <em>Ecce pono in Sion lapidem angularem</em></span>
+  </div>
+  <img class="ms-photo" src="assets/macro_sermon8a.jpg" alt="Macrophotographie Ms. Brélévenez VIII">
+  <div class="ms-photo-caption">Gros plan — détails de l'écriture</div>
+  <div class="ms-links">
+    <a class="ms-link" href="assets/sermon_8_compressed.pdf"><span class="ms-link-icon">☞</span> Manuscrit original (PDF)</a>
+    <a class="ms-link" href="assets/Sermon8retranscrit.html"><span class="ms-link-icon">☞</span> Transcription intégrale (HTML)</a>
+  </div>
+  <p class="ms-analyse">Ce sermon dogmatique et moral, fondé sur Romains 9, 33 (<em>Ecce pono in Sion lapidem offensionis angularem, electum, pretiosum</em>), traite de la controverse théologique fondamentale entre foi et œuvres, débat central de la période post-tridentine. Le prédicateur développe une position catholique classique, nuancée et équilibrée, évitant la double écueil du fidéisme luthérien (la foi seule suffit) et du pélagianisme (les œuvres seules sauvent). L'argumentation procède en deux temps : d'abord l'affirmation de la nécessité absolue de la foi pour le salut (<em>sine fide impossibile est placere Deo</em>), présentée comme lumière salutaire, remède aux plaies spirituelles et porte du Ciel ; ensuite l'insistance sur l'insuffisance d'une foi morte, stérile, sans les œuvres qui l'actualisent (<em>fides sine operibus mortua est</em>). La référence aux grandes figures bibliques (Abraham, Moïse, David) et aux martyrs sert à illustrer le modèle d'une « foi vive, héroïque et féconde ». On note une rhétorique de la gratitude (pour le don de la foi) contrebalancée par une exhortation morale sévère contre la tiédeur et l'indifférence religieuse. Le développement sur le jeune chrétien qui abandonne progressivement ses pratiques dévotionnelles jusqu'à tomber dans l'athéisme révèle une préoccupation pastorale aiguë face à la déchristianisation des mœurs. L'absence de polémique explicite contre le protestantisme n'empêche pas une réfutation implicite de la doctrine de la justification par la foi seule. La conclusion eschatologique (évocation du jugement dernier fondé sur les œuvres) inscrit le propos dans une perspective de conversion urgente caractéristique de la prédication baroque.</p>
+<img class="ms-photo" src="assets/macro_sermon8b.jpg" alt="Macrophotographie Ms. Brélévenez VIII"> 
+ <div class="ms-analyse-tech"><strong>Note technique :</strong> Papier vergé de qualité moyenne, présentant un jaunissement assez prononcé avec quelques taches d'humidité localisées visibles notamment dans les marges. Encre ferro-gallique brune d'intensité variable, montrant des zones d'oxydation modérée. L'écriture est une cursive française du XVIII<sup>e</sup> siècle remarquablement soignée et régulière, avec des caractères de module moyen et une inclinaison constante d'environ 70°. Les pleins et déliés sont bien marqués, révélant une maîtrise calligraphique certaine et l'usage d'une plume correctement taillée. Les hampes hautes (particulièrement visibles dans les lettres <em>d</em>, <em>h</em>, <em>l</em>) sont élancées et élégantes, avec des boucles supérieures bien formées. Les jambages descendants montrent également un travail soigné. La majuscule « D » (visible dans « Della » sur la deuxième macrophotographie) présente une ornementation sobre mais élégante, caractéristique de l'écriture de chancellerie française. Les mots latins sont parfaitement intégrés au flux de l'écriture sans rupture stylistique notable. Les interlignes sont réguliers et généreux, facilitant la lecture. On observe très peu d'abréviations comparativement à d'autres manuscrits du corpus, ce qui suggère soit une rédaction définitive destinée à la conservation, soit un usage liturgique nécessitant une lisibilité maximale. La mise en page est particulièrement soignée sur la première page photographiée, avec une citation liminaire bien mise en valeur et une référence biblique (<em>Ad Rom. IX, 33</em>) clairement identifiée. L'ensemble témoigne d'un travail de copiste professionnel ou d'un prédicateur particulièrement soucieux de la présentation formelle de son texte.</div>
+</div>
+
+<!-- ─── MS. BRÉLÉVENEZ IX ─── -->
+<div class="ms-notice" id="ms-ix">
+  <div class="ms-notice-header">
+    <span class="ms-number">Ms. Brélévenez IX</span>
+    <span class="ms-title">Discours sur l'Excellence et l'Établissement du Christianisme — <em>In quo vivimus, movemur et sumus</em></span>
+  </div>
+  <img class="ms-photo" src="assets/macro_sermon9.jpg" alt="Macrophotographie Ms. Brélévenez IX">
+  <div class="ms-photo-caption">Gros plan — détails de l'écriture</div>
+  <div class="ms-links">
+    <a class="ms-link" href="assets/sermon_9_compressed.pdf"><span class="ms-link-icon">☞</span> Manuscrit original (PDF)</a>
+    <a class="ms-link" href="assets/Sermon9retranscrit.html"><span class="ms-link-icon">☞</span> Transcription intégrale (HTML)</a>
+  </div>
+  <p class="ms-analyse">Ce discours apologétique, fondé sur Actes 17, 28 (<em>In quo vivimus, movemur et sumus</em>), constitue une pièce remarquable de défense du christianisme face aux Lumières. Le prédicateur déploie une double démonstration : l'excellence intrinsèque de la morale chrétienne et le caractère miraculeux de son établissement historique. L'argumentation relève de l'apologétique classique mais intègre des éléments empruntés au vocabulaire philosophique du XVIII<sup>e</sup> siècle (« intelligence », « science de l'esprit », « rapports dans les sociétés »). La comparaison systématique entre philosophie antique et christianisme — topos de la littérature patristique repris par Pascal — vise à démontrer la supériorité morale de l'Évangile. La référence à Socrate « déshonoré » et aux « coryphées des sectes » (probablement stoïciens et épicuriens) s'inscrit dans une tradition polémique remontant à Lactance et Augustin. Plus audacieuse est la citation implicite de Rousseau (« l'Évangile est divin... jamais la vertu n'a parlé un si doux langage »), retournée contre l'incrédulité moderne : le prédicateur utilise l'autorité même d'un philosophe des Lumières pour confondre le siècle. La seconde partie, consacrée à l'établissement miraculeux du christianisme, mobilise les lieux classiques de l'apologétique historique : faiblesse des apôtres, rapidité de la conversion, fécondité du martyre (<em>sanguis martyrum semen christianorum</em>, Tertullien). L'évocation finale de l'arche de Noé comme figure de l'Église inscrit le propos dans une ecclésiologie de la permanence face aux tempêtes révolutionnaires. Ce sermon révèle un prédicateur cultivé, au fait des débats de son temps, capable d'intégrer la controverse philosophique à la prédication traditionnelle.</p>
+  <div class="ms-analyse-tech"><strong>Note technique :</strong> Papier vergé de qualité assez médiocre, présentant un brunissement très prononcé avec de nombreuses taches d'humidité et d'importantes dégradations mécaniques visibles sur les bords (déchirures, effilochages, lacunes). L'état de conservation général est le plus précaire du corpus visible jusqu'à présent. Encre ferro-gallique brune fortement oxydée, ayant par endroits traversé le papier et créé des affaiblissements de la structure cellulosique. L'écriture est une cursive française du XVIII<sup>e</sup> siècle relativement rapide et peu homogène, avec des variations importantes de module, d'inclinaison et de pression. Les caractères sont parfois serrés et difficiles à déchiffrer, suggérant une rédaction hâtive ou un document de travail personnel plutôt qu'une copie de présentation. Les pleins sont marqués mais irréguliers, les déliés parfois nerveux et tremblés. On observe de nombreuses abréviations, des ratures et corrections, ainsi que quelques passages où l'encre a bavé. La majuscule « P » visible sur la seconde macrophotographie (« P'rim hortans ») montre néanmoins un certain souci ornemental malgré la rapidité générale de l'exécution. Les interlignes sont irréguliers et parfois insuffisants, créant une impression de densité textuelle. La mise en page manque de rigueur, avec des marges inégales et une justification à droite approximative. Le papier présente des vergeures bien visibles mais une texture rugueuse. L'ensemble témoigne d'un manuscrit utilitaire, probablement rédigé pour un usage immédiat et non destiné à être conservé, ce qui rend d'autant plus précieuse sa survie jusqu'à nos jours malgré son état fragile.</div>
+</div>
+
+<!-- ─── MS. BRÉLÉVENEZ X ─── -->
+<div class="ms-notice" id="ms-x">
+  <div class="ms-notice-header">
+    <span class="ms-number">Ms. Brélévenez X</span>
+    <span class="ms-title">Sermon sur les Dangers du Monde et la Barque de l'Église — <em>Qui amat periculum, peribit in illo</em></span>
+  </div>
+  <img class="ms-photo" src="assets/macro_sermon10a.jpg" alt="Macrophotographie Ms. Brélévenez X">
+  <div class="ms-photo-caption">Gros plan — détails de l'écriture</div>
+  <div class="ms-links">
+    <a class="ms-link" href="assets/sermon_10_compressed.pdf"><span class="ms-link-icon">☞</span> Manuscrit original (PDF)</a>
+    <a class="ms-link" href="assets/Sermon10retranscrit.html"><span class="ms-link-icon">☞</span> Transcription intégrale (HTML)</a>
+  </div>
+  <p class="ms-analyse">Ce sermon moral et ascétique, fondé sur l'Ecclésiastique 3, 27 (<em>Qui amat periculum, peribit in illo</em>), déploie l'allégorie classique de la barque de l'Église naviguant sur la mer orageuse du monde. Cette métaphore nautique, héritée des Pères de l'Église et développée par l'homilétique médiévale, structure l'ensemble du propos : le chrétien ne doit s'aventurer dans le monde qu'accompagné du Christ, à l'exemple des disciples n'entrant dans la barque qu'à la suite de leur Maître. L'argumentation entrelace trois registres : l'exégèse allégorique (la tempête apaisée, Pierre marchant sur les eaux), l'exemplarité vétérotestamentaire (Esther, les trois jeunes Hébreux à Babylone, Judith) et l'exhortation pastorale directe contre la tiédeur spirituelle. La critique du « respect humain », cette « lâche pusillanimité qui enlève plus d'âmes à Jésus-Christ que les tyrans », révèle une préoccupation centrale de la spiritualité moderne face à la pression sociale et à la « civilité mondaine ». Le développement sur l'éducation chrétienne des enfants, greffé sur le corps principal du sermon, témoigne des priorités pastorales post-tridentines : la famille comme cellule de transmission de la foi, les parents comme « image et représentants de Dieu ». L'image remarquable de l'éducation religieuse comparée aux « peintures d'un ancien édifice que l'on retrouve au milieu des ruines » révèle une conscience aiguë de la fragilité de la foi dans un monde sécularisé. La conclusion apocalyptique, évoquant la chute de Jérusalem (« nuit désastreuse où tomba cette ville antique »), fonctionne comme avertissement eschatologique contre l'apostasie collective. Ce sermon illustre la tension caractéristique de la pastorale du XVIII<sup>e</sup> siècle entre insertion nécessaire dans le monde et préservation de l'identité chrétienne.</p>
+ <img class="ms-photo" src="assets/macro_sermon10b.jpg" alt="Macrophotographie Ms. Brélévenez X"> 
+ <div class="ms-analyse-tech"><strong>Note technique :</strong> Papier vergé de belle qualité, présentant un jaunissement léger et uniforme avec très peu de taches ou d'altérations. L'état de conservation est excellent, nettement supérieur à la moyenne du corpus. Encre ferro-gallique brune d'une teinte homogène, bien conservée, montrant une oxydation minimale et une belle stabilité dans le temps. L'écriture est une cursive française du XVIII<sup>e</sup> siècle particulièrement élégante, régulière et maîtrisée, avec des caractères de module moyen et une inclinaison très constante (environ 70-75°). Les pleins et déliés sont remarquablement bien contrastés, révélant une excellente maîtrise de la plume d'oie et un geste calligraphique assuré. Les hampes ascendantes sont hautes et gracieuses, les jambages descendants bien équilibrés. Les majuscules montrent un travail ornemental raffiné : le « P » initial (visible sur la troisième macrophotographie dans « Puisqu'un Dieu ») présente une boucle ample et harmonieuse caractéristique de l'écriture de chancellerie ; le « D » (visible sur la deuxième macro) est également très soigné avec une volute élégante. Les mots latins (<em>ut cuncta faciebat</em>) sont parfaitement intégrés sans rupture stylistique. La mise en page est exceptionnellement soignée, avec des marges généreuses, régulières et bien respectées, des interlignes constants et une justification à droite remarquablement droite pour une écriture manuscrite. Très peu d'abréviations, aucune rature visible sur les portions photographiées. Le papier montre des vergeures fines et régulières, signe d'une fabrication de qualité. L'ensemble témoigne d'une copie de présentation destinée probablement à être conservée ou à servir de modèle, réalisée par un scribe professionnel ou un prédicateur particulièrement soucieux de la beauté formelle du manuscrit. C'est l'un des plus beaux spécimens calligraphiques du corpus.</div>
+</div>
+
+
+<!-- ─── MS. BRÉLÉVENEZ XI ─── -->
+<div class="ms-notice" id="ms-xi">
+  <div class="ms-notice-header">
+    <span class="ms-number">Ms. Brélévenez XI</span>
+    <span class="ms-title">Sermon sur la contrition — <em>Dominus quoque transtulit peccatum tuum</em></span>
+  </div>
+  <img class="ms-photo" src="assets/macro_sermon11.jpg" alt="Macrophotographie Ms. Brélévenez XI">
+  <div class="ms-photo-caption">Gros plan — folio de conclusion</div>
+  <div class="ms-links">
+    <a class="ms-link" href="assets/sermon_11_compressed.pdf"><span class="ms-link-icon">☞</span> Manuscrit original (PDF)</a>
+	<a class="ms-link" href="assets/sermon11_BZH_retranscrit.html"><span class="ms-link-icon">☞</span> Transcription intégrale en breton(HTML)</a>
+    <a class="ms-link" href="assets/sermon11_BZH traduit_retranscrit.html"><span class="ms-link-icon">☞</span> Transcription intégrale en français(HTML)</a>
+  </div>
+  <p class="ms-analyse">Ce sermon sur la contrition, rédigé en breton et fondé sur la parole de II Reg. XII — <em>Dominus quoque transtulit peccatum tuum</em> —, est l'un des documents les plus rigoureusement construits du corpus sur le plan de la théologie sacramentelle. Le prédicateur y développe une quadripartition classique de la contrition (surnaturelle, intérieure, universelle, souveraine) qui s'inscrit dans la tradition tridentine de la pénitence, telle qu'elle fut systématisée par les théologiens post-conciliaires et diffusée dans la pastorale française et bretonne du XVIII<sup>e</sup> et du début du XIX<sup>e</sup> siècle. Cette architecture en quatre points témoigne d'une formation scolastique solide : chaque propriété est définie, illustrée par un exemple scripturaire ou hagiographique, puis appliquée à la situation concrète des fidèles. L'exemple de saint Pierre, central dans la partie sur la contrition surnaturelle, est traité avec une précision exégétique notable — le regard du Christ comme acte de grâce antécédente — qui dépasse le simple usage homilétique. L'insistance sur la contrition <em>souveraine</em>, c'est-à-dire sur la nécessité d'aimer Dieu par-dessus tous les biens temporels, est développée avec une fermeté pastorale caractéristique d'une prédication de mission ou de retraite paroissiale plutôt que d'un sermon dominical ordinaire. Le choix du breton comme langue de rédaction situe ce document dans un contexte de pastorale populaire spécifique au diocèse de Tréguier, où le bilinguisme liturgique et homilétique était une nécessité pratique et une tradition ancienne.</p>
+  <div class="ms-analyse-tech"><strong>Note technique :</strong> Le gros plan révèle un papier vergé de grammage moyen, à surface légèrement grenée, avec un fond grisâtre attestant un vieillissement avancé mais sans foxing prononcé dans la zone photographiée. L'encre, ferro-gallique, présente une teinte brun-noir assez soutenue avec un degré d'oxydation modéré, les traits fins restant lisibles sans halo de diffusion notable. L'écriture est une cursive régulière, de module moyen, à inclinaison droite légèrement prononcée vers la droite, avec des hastes descendantes longues et des liaisons continues entre les mots. Les lettres majuscules — visibles notamment sur <em>David</em> et <em>Peccavi Domino</em> — sont tracées avec soin et présentent des empattements courbés, indice d'une main formée à une calligraphie scolaire classique. On observe dans la zone médiane du cliché une alternance de termes bretons et latins sur la même ligne, ce qui témoigne de la pratique homilétique bilingue caractéristique de ce corpus ; les mots latins sont intégrés sans changement de module ni de pente, suggérant une maîtrise naturelle du passage d'une langue à l'autre. Aucune rature ni correction interlinéaire n'est visible dans cette zone, ce qui peut indiquer soit une copie au net, soit une main particulièrement assurée. — <em>Note graphologique : ce document appartient au groupe B (sermons en langue bretonne), dont les caractéristiques graphiques — module compact, b à haste droite sans boucle ascendante, majuscules de morphologie distincte du groupe A français — diffèrent suffisamment pour envisager un second scripteur, ou à défaut un registre d'écriture adapté à la langue bretonne.</em></div>
+</div>
+
+
+<!-- ─── MS. BRÉLÉVENEZ XII ─── -->
+<div class="ms-notice" id="ms-xii">
+  <div class="ms-notice-header">
+    <span class="ms-number">Ms. Brélévenez XII</span>
+    <span class="ms-title">Sermon sur le grand commandement de l'amour de Dieu — <em>Diliges Dominum Deum tuum ex toto corde tuo</em></span>
+  </div>
+  <img class="ms-photo" src="assets/macro_sermon12.jpg" alt="Macrophotographie Ms. Brélévenez XII">
+  <div class="ms-photo-caption">Gros plan — section centrale</div>
+  <div class="ms-links">
+    <a class="ms-link" href="assets/sermon_12_compressed.pdf"><span class="ms-link-icon">☞</span> Manuscrit original (PDF)</a>
+    <a class="ms-link" href="assets/Sermon12retranscrit.html"><span class="ms-link-icon">☞</span> Transcription intégrale (HTML)</a>
+  </div>
+  <p class="ms-analyse">Ce sermon sur le grand commandement de l'amour de Dieu, fondé sur le verset du Deutéronome (6, 5) repris par l'Évangile, est l'un des textes théologiquement les plus ambitieux du corpus. Le prédicateur y déploie une architecture rhétorique soignée, ouverte sur l'anecdote de l'anachorète scandalisé par les controverses scolastiques, procédé classique dans la tradition des sermons de mission pour opposer la simplicité de la foi vécue à la vanité de la spéculation. La partie centrale — cinq propriétés du grand commandement (ancienneté, nécessité, étendue, dignité, durée) — révèle une formation solide dans la théologie morale post-tridentine et une familiarité évidente avec la littérature des prédicateurs français du XVII<sup>e</sup> siècle, en particulier Bourdaloue et Massillon, dont plusieurs formulations semblent résonner dans le texte. La tripartition des bienfaits divins selon les ordres de la nature, de la grâce et de la gloire est un schème augustinien classique, ici mis au service d'une démonstration ascendante qui conduit le fidèle à reconnaître l'obligation morale de la charité non comme contrainte mais comme réponse. La conclusion, avec la figure de la femme d'Alexandrie portant eau et flambeau, témoigne d'un sens rhétorique développé et d'une culture patristique ou hagiographique étendue — cette image, d'une intensité saisissante, est caractéristique d'une prédication destinée à émouvoir un auditoire populaire tout en maintenant un niveau théologique élevé. L'ensemble suggère un prédicateur formé dans un grand séminaire français, prêchant en paroisse rurale avec des notes élaborées plutôt qu'un texte entièrement improvisé.</p>
+  <div class="ms-analyse-tech"><strong>Note technique :</strong> La macrophotographie révèle un papier vergé blanc à peine jauni, de grammage moyen à léger, avec une surface relativement lisse et peu de défauts visibles dans la zone cadrée. L'encre est d'un noir profond à peine brun, ferro-gallique, avec un degré d'oxydation faible à modéré : les traits restent denses et bien contrastés, sans auréoles de diffusion ni corrosion perforante apparente. L'écriture est une cursive française soignée, de module moyen-grand, à inclinaison droite marquée, avec des lettres bien formées et des liaisons fluides. Les majuscules ornées — notamment le <em>Grand</em> souligné, traité comme titre courant ou sous-titre structurel, et le <em>G</em> de <em>Grand par rapport à sa nécessité</em> — présentent des empattements volumineux et des traverses débordantes, procédé graphique délibéré pour signaler visuellement les articulations du plan. On observe également l'usage d'une ligne soulignée sous le mot <em>Grand</em> comme marqueur rhétorique, ce qui témoigne d'une conscience de la mise en page et d'une préparation soignée du texte à des fins homilétiques. Aucune rature n'est visible dans la zone photographiée ; la régularité de l'interlignage et la constance du module suggèrent une copie au propre plutôt qu'un brouillon.</div>
+</div>
+
+<!-- ─── MS. BRÉLÉVENEZ XIII ─── -->
+<div class="ms-notice" id="ms-xiii">
+  <div class="ms-notice-header">
+    <span class="ms-number">Ms. Brélévenez XIII</span>
+    <span class="ms-title">Sermon sur la foi, les mystères de la religion et la vérité de l'Église — <em>Sine fide impossibile est placere Deo</em></span>
+  </div>
+  <img class="ms-photo" src="assets/macro_sermon13.jpg" alt="Macrophotographie Ms. Brélévenez XIII">
+  <div class="ms-photo-caption">Gros plan — section apologétique</div>
+  <div class="ms-links">
+    <a class="ms-link" href="assets/sermon_13_compressed.pdf"><span class="ms-link-icon">☞</span> Manuscrit original (PDF)</a>
+    <a class="ms-link" href="assets/Sermon13retranscrit.html"><span class="ms-link-icon">☞</span> Transcription intégrale (HTML)</a>
+  </div>
+  <p class="ms-analyse">Ce sermon sur la foi et l'autorité de l'Église catholique est, dans le corpus de Brélévenez, le document le plus nettement daté par son contenu interne. Les références à un « déluge de contradictions », à un « pavé sanglant de notre histoire récente », aux « sophistes qui prêcheraient la destruction totale », à l'athéisme, au panthéisme et au matérialisme comme périls contemporains, et surtout l'exclamation finale « Dieu protège la France ! », situent indubitablement ce texte dans le contexte de la Monarchie de Juillet ou des années qui la précèdent immédiatement — vraisemblablement entre 1830 et 1845. Il s'agit d'un sermon apologétique au sens strict : son objet n'est pas l'édification morale ordinaire mais la défense rationnelle de la foi contre l'incrédulité organisée. La structure en trois temps — nécessité de la foi face aux crises du siècle, fécondité morale des mystères chrétiens illustrée par les Filles de Saint-Vincent-de-Paul en Orient, primauté de l'Église catholique sur les communions dissidentes — est caractéristique de la prédication apologétique française de la Restauration et de la Monarchie de Juillet, telle qu'elle se pratiquait dans les conférences de Notre-Dame de Paris inaugurées par Lacordaire en 1835. La mention des conversions anglaises et du Mouvement d'Oxford, évoquées comme signe de la vitalité catholique, renforce cette datation et situe le prédicateur dans un milieu informé des débats ecclésiaux européens. Le ton est délibérément polémique, avec une véhémence rhétorique — accumulations, exclamations, apostrophes — qui le distingue nettement des sermons moraux du même corpus, plus sobrement construits. Ce document est précieux pour comprendre comment la pastorale bretonne du second tiers du XIX<sup>e</sup> siècle intégrait les enjeux idéologiques nationaux dans la prédication paroissiale.</p>
+  <div class="ms-analyse-tech"><strong>Note technique :</strong> La macrophotographie révèle un papier vergé de grammage moyen à léger, à surface granuleuse et mate, sensiblement plus grisâtre que celui des sermons voisins du corpus, avec une texture irrégulière témoignant d'une fabrication artisanale ou d'une qualité inférieure. Des traces de foxing diffus sont perceptibles en arrière-plan, ainsi qu'un léger voile d'humidité ancienne qui a légèrement gondolé le support — visible également sur la vue d'ensemble du folio, où le bord droit du feuillet présente une déchirure partielle. L'encre est ferro-gallique brun foncé, d'oxydation modérée à avancée, avec un léger halo de diffusion sur certains traits épais, indice d'une plume chargée ou d'un papier faiblement encollé. L'écriture est une cursive rapide, de module moyen, moins régulière que celle des sermons XI et XII : l'inclinaison varie légèrement d'une ligne à l'autre, les liaisons sont parfois lâches, et certaines lettres — notamment les <em>d</em>, <em>l</em> et <em>s</em> — présentent des formes abrégées caractéristiques d'une main habituée à noter vite. Les majuscules ornées restent soignées, mais les fins de ligne montrent une compression des lettres, indice d'une planification spatiale approximative. L'ensemble suggère davantage un brouillon élaboré qu'une copie au net, ce qui est cohérent avec le ton plus haché et plus improvisé du texte.</div>
+</div>
+
+<!-- ─── MS. BRÉLÉVENEZ XIV ─── -->
+<div class="ms-notice" id="ms-xiv">
+  <div class="ms-notice-header">
+    <span class="ms-number">Ms. Brélévenez XIV</span>
+    <span class="ms-title">Sermon sur les tribulations de la vie — <em>Beati qui lugent</em></span>
+  </div>
+  <img class="ms-photo" src="assets/macro_sermon14.jpg" alt="Macrophotographie Ms. Brélévenez XIV">
+  <div class="ms-photo-caption">Gros plan — folio 1 recto</div>
+  <div class="ms-links">
+    <a class="ms-link" href="assets/sermon_14_compressed.pdf"><span class="ms-link-icon">☞</span> Manuscrit original (PDF)</a>
+    <a class="ms-link" href="assets/Sermon14retranscrit.html"><span class="ms-link-icon">☞</span> Transcription intégrale (HTML)</a>
+  </div>
+  <p class="ms-analyse">Ce sermon sur les tribulations constitue l'un des textes théologiquement les plus denses du corpus. Son verset directeur, <em>Beati qui lugent</em> (Mt 5, 4), est traité non comme une simple consolation mais comme le pivot d'une anthropologie chrétienne de la souffrance : la condition douloureuse de l'homme après la chute — résumée dans la formule de la Genèse <em>spinas et tribulos germinabit tibi</em> — y est lue comme condition nécessaire, non accidentelle, de la vie sur terre. Le prédicateur convoque une chaîne d'autorités scripturaires d'une ampleur remarquable : Job, les Psaumes, Jérémie, saint Paul, le Concile de Trente, et le récit de la faute d'Adam comme archétype de toute prévarication humaine. L'enchaînement doctrinal est rigoureux : la souffrance n'est pas un scandale mais un instrument de purification et de sanctification (<em>percutiam et ego sanabo</em>) ; elle réveille la foi là où la prospérité l'endort, comme l'illustre longuement l'exemple de David. La troisième partie, consacrée à la joie apostolique dans l'adversité, cite abondamment Paul pour montrer que la participation aux souffrances du Christ (<em>socii passionum</em>) est la voie normale de l'adoption filiale. On perçoit dans ce sermon l'influence de la tradition ascétique française du XVII<sup>e</sup> siècle — Bossuet, Bourdaloue — dans la construction rhétorique en trois mouvements et dans la vision d'une Providence qui dispense biens et maux avec une égale sagesse. L'insistance sur le mérite des souffrances et leur pouvoir expiatoire s'inscrit pleinement dans la pastorale post-tridentine en usage dans les diocèses bretons jusqu'au milieu du XIX<sup>e</sup> siècle.</p>
+  <div class="ms-analyse-tech"><strong>Note technique :</strong> La macrophotographie révèle un papier vergé à grain moyen, de teinte crème ancienne, sans réglure apparente. L'encre, ferro-gallique de type brun foncé tirant sur le noir, présente une très faible migration dans le support, ce qui indique un papier de qualité relativement bonne malgré l'ancienneté du document. L'écriture est une cursive française de chancellerie, à module régulier et inclinaison droitière modérée, avec des hastes bien marquées et des jambages courts. Les liaisons entre lettres sont fluides et continues, sans levée de plume systématique, caractéristiques d'une main formée et habituée à l'écriture rapide. On note l'emploi de quelques abréviations conventionnelles visibles dans la portion lisible (<em>Dis le</em> pour <em>Dislé</em>, contractions des mots latins). La pression sur la plume est soutenue et uniforme, sans tremblement ni variation notable de l'épaisseur du trait, suggérant une rédaction d'un seul tenant plutôt qu'une mise au propre fragmentée. L'ensemble désigne une main cléricale exercée, vraisemblablement celle d'un prêtre en activité pastorale régulière.</div>
+</div>
+
+<!-- ─── MS. BRÉLÉVENEZ XV ─── -->
+<div class="ms-notice" id="ms-xv">
+  <div class="ms-notice-header">
+    <span class="ms-number">Ms. Brélévenez XV</span>
+    <span class="ms-title">Sermon sur le petit nombre des élus — <em>Multi sunt vocati, pauci vero electi</em></span>
+  </div>
+  <img class="ms-photo" src="assets/macro_sermon15.jpg" alt="Macrophotographie Ms. Brélévenez XV">
+  <div class="ms-photo-caption">Gros plan — folio 1 recto</div>
+  <div class="ms-links">
+    <a class="ms-link" href="assets/sermon_15_BZH_compressed.pdf"><span class="ms-link-icon">☞</span> Manuscrit original (PDF)</a>
+	<a class="ms-link" href="assets/sermon15_BZH_retranscrit.html"><span class="ms-link-icon">☞</span> Transcription intégrale en breton (HTML)</a>
+    <a class="ms-link" href="assets/sermon15_BZH traduit_retranscrit.html"><span class="ms-link-icon">☞</span> Transcription intégrale en français (HTML)</a>
+  </div>
+  <p class="ms-analyse">Ce sermon sur le petit nombre des élus, rédigé en langue bretonne et destiné à la paroisse de Prat dans le Trégor, est un document d'une double singularité au sein du corpus : il est le seul sermon en langue vernaculaire bretonne, et il traite d'un thème — la <em>paucitas electorum</em> — qui appartient à la grande tradition rigoriste de la prédication catholique d'Ancien Régime, de saint Jean Chrysostome jusqu'à Massillon et son célèbre sermon <em>Sur le petit nombre des élus</em> prononcé devant Louis XIV. Le verset directeur, <em>Multi sunt vocati, pauci vero electi</em> (Mt 20, 16), est cité d'emblée en latin puis immédiatement rendu en breton — <em>Cals a dud a zo galvet, mes neubet a vero choaset</em> —, ce bilinguisme structurel révélant une pratique homiléticale de médiation entre culture savante et culture populaire qui caractérise la pastorale bretonne des XVII<sup>e</sup>–XVIII<sup>e</sup> siècles. L'argumentation, en quatre parties, procède par accumulation de figures scripturaires de la sélection divine (Noé, Caleb et Josué, Loth, les trois jeunes de Babylone, Isaïe comparant les justes à des grappillons), avant de poser la question sotériologique centrale : par lequel des deux seuls chemins vers le salut — l'innocence baptismale conservée ou la vraie pénitence — le fidèle chemine-t-il ? La troisième partie, consacrée aux maximes du monde opposées à celles de l'Évangile, constitue le cœur pastoral du sermon : le prédicateur y dresse un tableau sévère des usages ordinaires de ses paroissiens (fréquentation des auberges, désordres de la jeunesse, aveuglement des parents) et convoque saint Augustin contre le « fleuve des coutumes humaines ». La péroraison, sous forme d'un jugement imaginaire prononcé dans l'église même, relève d'une technique rhétorique de visualisation eschatologique caractéristique de la prédication jésuite et sulpicienne. La mention finale <em>Prat !!!</em>, graphiquement emphatique, confirme que ce document est bien un sermon de paroisse, préparé pour une assemblée précise et un lieu précis — ce qui en fait un témoignage direct de la prédication populaire trégorroise du XVIII<sup>e</sup> siècle.</p>
+  <div class="ms-analyse-tech"><strong>Note technique :</strong> La macrophotographie révèle un papier vergé de bonne qualité, à grain fin et teinte blanche légèrement vieillie, nettement plus clair que la plupart des autres feuillets du corpus, sans foxing significatif visible dans le champ photographié. L'encre est ferro-gallique brun foncé, d'oxydation modérée, avec un trait net et une pénétration dans le support bien contrôlée. L'écriture présente un module moyen à grand, avec une alternance frappante entre deux registres graphiques distincts au sein du même folio : une cursive bretonne courante, aux liaisons continues et aux abréviations fréquentes, et une main plus posée, à lettres détachées et majuscules soignées, utilisée notamment pour les titres courants et les mots-clés — comme en témoigne la ligne <em>Chetu heze om</em> visible au centre du gros plan, tracée en lettres plus grandes et plus espacées que le texte environnant. Cette alternance de module semble fonctionnelle : elle signale au prédicateur, dans le feu de la lecture à voix haute, les articulations structurelles du discours. On note également la présence de mots latins insérés dans le texte breton sans changement de module ni de plume, ce qui confirme que le rédacteur maîtrisait les deux langues dans un même geste d'écriture. L'inclinaison est légèrement droitière, la pression ferme et régulière, sans tremblement : la main est celle d'un clerc instruit et habitué à la rédaction prolongée.</div>
+</div>
+
+<!-- ─── MS. BRÉLÉVENEZ XVI ─── -->
+<div class="ms-notice" id="ms-xvi">
+  <div class="ms-notice-header">
+    <span class="ms-number">Ms. Brélévenez XVI</span>
+    <span class="ms-title">Sermon sur l'amour de Dieu — <em>Diliges Dominum Deum tuum ex toto corde tuo</em></span>
+  </div>
+  <img class="ms-photo" src="assets/macro_sermon16.jpg" alt="Macrophotographie Ms. Brélévenez XVI">
+  <div class="ms-photo-caption">Gros plan — folio 1 recto</div>
+  <div class="ms-links">
+    <a class="ms-link" href="assets/sermon_16_compressed.pdf"><span class="ms-link-icon">☞</span> Manuscrit original (PDF)</a>
+    <a class="ms-link" href="assets/sermon16retranscrit.html"><span class="ms-link-icon">☞</span> Transcription intégrale (HTML)</a>
+  </div>
+  <p class="ms-analyse">Ce sermon sur l'amour de Dieu, fondé sur le commandement évangélique de Matthieu 22, 37 — <em>Diliges Dominum Deum tuum ex toto corde tuo</em> —, constitue l'un des textes les plus amples et les plus construits du corpus. Son architecture en deux parties symétriques est classiquement scolastique : la première traite des grandeurs de Dieu comme motif d'amour ; la seconde, ses bienfaits envers l'homme, se déploie elle-même en trois degrés — ordre de la nature, ordre de la grâce, ordre de la gloire — selon une progression ascendante caractéristique de la théologie mystique augustinienne. L'incipit du sermon, visible sur la macrophotographie — « S'il y a quelque connaissance nécessaire à l'homme, c'est surtout celle de Dieu » —, s'inscrit dans la tradition des sermons sur la connaissance divine comme préalable à l'amour, tradition que l'on retrouve chez Bossuet et Fénelon. Le développement sur les bienfaits de Dieu dans l'ordre de la grâce est remarquable par sa densité sacramentelle : baptême, confirmation, pénitence, eucharistie y sont successivement convoqués dans un enchaînement qui épouse la logique du catéchisme tridentin. La citation <em>Venite ad me omnes</em>, associée à l'image du Dieu trônant dans ses tabernacles, révèle une forte sensibilité eucharistique, cohérente avec le renouveau de la dévotion au Saint-Sacrement dans la Bretagne du premier XIX<sup>e</sup> siècle. La conclusion, centrée sur l'<em>anathème</em> paulinien lancé contre quiconque n'aime pas Dieu (<em>si quis non amat D. N. J. C. sit anathema</em>), opère un renversement rhétorique efficace : après l'effusion de la deuxième partie, l'exhortation finale retrouve la sévérité d'un acte solennel, avant de s'achever dans une adresse personnelle et fervente au divin — <em>sero te amavi</em>, citation augustinienne implicite — qui confère à l'ensemble une tonalité à la fois pastorale et mystique.</p>
+  <div class="ms-analyse-tech"><strong>Note technique :</strong> La macrophotographie révèle un papier vergé réglé à la mine ou à la pointe sèche, trait caractéristique peu fréquent dans ce corpus et qui distingue immédiatement ce folio des autres. Le réglage est visible sous forme de lignes horizontales légèrement déprimées, régulièrement espacées, que le scripteur a respectées avec une précision notable. Le papier présente une teinte chamois clair avec des auréoles brunâtres d'humidité irrégulièrement réparties, particulièrement denses dans la partie centrale du champ photographié, sans toutefois altérer la lisibilité du texte. L'encre ferro-gallique est d'un brun moyen tirant sur le sépia, avec une légère variation de valeur selon les lignes, possiblement liée à des rechargements successifs de la plume. L'écriture est une cursive française régulière, à module moyen, avec une inclinaison droitière prononcée et des hampes et jambages bien développés. Le ductus est soigné, les lettres bien formées et bien différenciées ; les mots latins — <em>Diliges Dominum Deum tuum</em> — sont tracés avec un module légèrement accru et une pression plus appuyée, leur conférant une mise en valeur visuelle dans la page. L'ensemble suggère une mise au propre plutôt qu'un brouillon, rédigée posément sur un support préparé.</div>
+</div>
+
+<!-- ─── MS. BRÉLÉVENEZ XVII ─── -->
+<div class="ms-notice" id="ms-xvii">
+  <div class="ms-notice-header">
+    <span class="ms-number">Ms. Brélévenez XVII</span>
+    <span class="ms-title">Sermon sur l'aumône — <em>Date et dabitur vobis</em></span>
+  </div>
+  <img class="ms-photo" src="assets/macro_sermon17.jpg" alt="Macrophotographie Ms. Brélévenez XVII">
+  <div class="ms-photo-caption">Gros plan — folio 1 recto</div>
+  <div class="ms-links">
+    <a class="ms-link" href="assets/sermon_17_compressed.pdf"><span class="ms-link-icon">☞</span> Manuscrit original (PDF)</a>
+    <a class="ms-link" href="assets/Sermon17retranscrit.html"><span class="ms-link-icon">☞</span> Transcription intégrale (HTML)</a>
+  </div>
+  <p class="ms-analyse">Ce sermon sur le soulagement des souffrances par la religion est le document le plus atypique du corpus à plusieurs égards. Son sujet n'est pas un thème scripturaire ou sacramentel classique, mais une apologie du christianisme comme force de charité sociale — thème qui le situe résolument dans le contexte idéologique de la Monarchie de Juillet, période de vive concurrence entre catholicisme et philosophies libérales ou socialistes naissantes. La mention explicite du choléra de <strong>1832–1833</strong>, du dévouement des religieux catholiques à New-York, de Charles Borromée à Milan et des pestifères de Marseille, confère au texte une actualité polémique immédiate : le prédicateur oppose point par point la charité catholique à l'impuissance qu'il attribue au protestantisme, citant Voltaire à charge contre les ministres réformés qui auraient refusé de soigner les malades à Genève en 1543. Ce recours à Voltaire comme témoin malgré lui est une figure rhétorique apologétique caractéristique de la prédication ultramontaine des années 1830–1850. La structure du sermon est en deux parties nettement dissymétriques : la première, centrée sur l'œuvre universelle de la charité institutionnelle (ordres religieux, hôpitaux, missions), offre un panorama quasi encyclopédique des œuvres catholiques — sœurs grises, frères hospitaliers, capucins, missionnaires de Chine et d'Annam, moine maronite du Liban, missionnaire des forêts d'Amérique ; la seconde, consacrée à la gloire du christianisme dans les temps de crise, déploie la métaphore filée du naufrage et développe une théologie de l'épreuve comme révélateur de la vérité chrétienne. Le ton est nettement plus oratoire et militant que dans la plupart des autres sermons du corpus, avec des majuscules emphatiques dans la transcription (<em>CROIX</em>, <em>OCEAN</em>, <em>NON NON</em>) qui signalent probablement des effets de voix notés à l'usage du prédicateur. La référence aux « chemins de fer et canaux » bénis par le Christ témoigne d'une tentative d'ancrage dans la modernité industrielle, cohérente avec la pastorale sociale du catholicisme social de la première moitié du XIX<sup>e</sup> siècle. — <em>Terminus post quem établi : 1833 par la mention explicite du choléra de 1832–1833 ; la référence aux chemins de fer comme réalité contemporaine connue de l'auditoire suggère une date vraisemblablement postérieure à 1837.</em></p>
+  <div class="ms-analyse-tech"><strong>Note technique :</strong> La macrophotographie révèle un papier vergé de très bonne qualité, à grain fin et teinte blanche, l'un des supports les plus clairs et les mieux conservés du corpus, sans foxing visible dans le champ photographié. L'encre est ferro-gallique noire à très noire, d'oxydation faible, avec un contraste marqué sur le fond clair du papier qui confère au texte une grande lisibilité. L'écriture est une cursive française de grand module, nettement plus développée que la moyenne du corpus, avec des hastes très allongées — particulièrement sensibles sur les lettres <em>C</em>, <em>d</em> et <em>g</em> — dont les boucles débordent largement dans l'interligne supérieur. Le <em>C</em> initial visible en tête de page, formant une anse majestueuse à boucle fermée, est graphiquement remarquable et témoigne d'une main soucieuse de l'effet calligraphique de l'entrée en matière. La pression est ferme et régulière, le tracé assuré, sans reprise ni hésitation visible. Les espacements entre mots sont larges, ce qui, combiné au grand module, donne une impression d'aisance et de maîtrise. L'inclinaison est modérément droitière et très constante d'une ligne à l'autre. L'ensemble désigne une main cléricale expérimentée, possiblement plus jeune ou mieux formée que les scripteurs de plusieurs autres pièces du corpus, dont l'écriture est plus serrée et plus économe du support.</div>
+</div>
+
+<!-- ─── MS. BRÉLÉVENEZ XVIII ─── -->
+<div class="ms-notice" id="ms-xviii">
+  <div class="ms-notice-header">
+    <span class="ms-number">Ms. Brélévenez XVIII</span>
+    <span class="ms-title">Sermon sur le service de Dieu dans la jeunesse — <em>Memento creatoris tui in diebus juventutis tuae</em></span>
+  </div>
+  <img class="ms-photo" src="assets/macro_sermon18.jpg" alt="Macrophotographie Ms. Brélévenez XVIII">
+  <div class="ms-photo-caption">Gros plan — folio médian recto</div>
+  <div class="ms-links">
+    <a class="ms-link" href="assets/sermon_18_compressed.pdf"><span class="ms-link-icon">☞</span> Manuscrit original (PDF)</a>
+    <a class="ms-link" href="assets/Sermon18_BZH_retranscrit.html"><span class="ms-link-icon">☞</span> Transcription bretonne et traduction française (HTML)</a>
+  </div>
+  <p class="ms-analyse">Ce sermon sur l'obligation de servir Dieu dès la jeunesse, rédigé en breton et fondé sur le verset de l'Ecclésiaste 12, 1 — <em>Memento creatoris tui in diebus juventutis tuae</em>, rendu immédiatement en breton : <em>N'anconat quet o Creuer epad o Jaouanquis</em> —, est le deuxième sermon en langue bretonne du corpus avec le sermon 15, et partage avec lui la même caractéristique formelle du bilinguisme enchâssé, les citations latines étant maintenues dans leur langue d'origine au sein d'un texte vernaculaire. Son sujet — la jeunesse comme temps privilégié et irremplaçable de la conversion — le rattache à un genre homilétique très répandu dans la prédication catholique post-tridentine, que l'on trouve notamment chez saint Jean Chrysostome, abondamment cité, et dans les missions populaires bretonnes des XVII<sup>e</sup>–XVIII<sup>e</sup> siècles. L'argumentation se déploie en deux parties symétriques : la première établit l'obligation stricte de servir Dieu pendant la jeunesse, en réfutant point par point la maxime mondaine du <em>laissons passer la jeunesse</em> ; la seconde propose les moyens concrets de tenir cette obligation — défiance de soi, fuite des occasions, prière, travail et solitude. Le prédicateur manie avec une grande efficacité rhétorique le procédé du retournement ironique : il cite le Saint-Esprit (<em>Lætare, Juvenis, in adolescentia tua</em>) non comme une permission de jouir, mais comme un avertissement redoutable — Dieu tient le compte de chaque pas sur le chemin de la volupté. La méditation sur la mort prématurée, illustrée par la citation du roi Ézéchias (<em>in dimidio dierum meorum vadam ad portas inferi</em>), et la figure des damnés avertissant les vivants depuis l'enfer ouvert, appartiennent au répertoire des missions rurales. La conclusion — adresse directe à Dieu demandant qu'il reçoive ses enfants pénitents et leur accorde une éternité heureuse — adopte la forme d'une prière collective qui devait être scandée ou reprise par l'assemblée, usage propre aux offices de mission en Basse-Bretagne.</p>
+  <div class="ms-analyse-tech"><strong>Note technique :</strong> La macrophotographie révèle un papier vergé réglé à la pointe sèche, avec des lignes horizontales régulièrement espacées nettement visibles sous l'écriture, caractéristique partagée avec le sermon 16 et qui distingue ces deux pièces bretonnes des feuillets non réglés du corpus français. Le papier est de teinte crème claire, légèrement jauni en surface, avec quelques petites taches d'humidité ponctuelles mais sans foxing généralisé. L'encre est ferro-gallique brun-noir, d'oxydation moyenne, avec un trait vif et bien contrasté. L'écriture présente un module moyen à grands caractères, à inclinaison droitière marquée, avec des hastes bien développées. On observe une alternance stylistique significative : le texte breton courant est tracé dans une cursive serrée à liaisons continues, tandis que certains mots ou syntagmes — visibles dans le champ photographié, notamment <em>Ar Sberet S[ent]</em> (le Saint-Esprit) et les insertions latines comme <em>excidetur et in igne[m]</em> et <em>transivi</em> — sont écrits avec un module légèrement accru et un tracé plus appuyé, signalant au prédicateur les points d'emphase orale. Les jambages des lettres bretonnes <em>d</em>, <em>b</em> et <em>v</em> présentent des formes caractéristiques de la graphie bretonne traditionnelle, distinctes des habitudes françaises, confirmant que le scripteur était un locuteur natif du breton écrivant dans sa propre langue plutôt qu'en transcription phonétique. — <em>Note graphologique : ce document appartient au groupe B (sermons en langue bretonne). Sa main est cohérente avec celle des sermons XI, XV, XIX, XX, XXII et XXIII, dont elle partage le module compact et les formes letterales caractéristiques.</em></div>
+</div>
+
+<!-- ─── MS. BRÉLÉVENEZ XIX ─── -->
+<div class="ms-notice" id="ms-xix">
+  <div class="ms-notice-header">
+    <span class="ms-number">Ms. Brélévenez XIX</span>
+    <span class="ms-title">Sermon sur la nécessité de la pénitence — <em>Poenitentiam agite, appropinquavit enim regnum coelorum</em></span>
+  </div>
+  <img class="ms-photo" src="assets/macro_sermon19.jpg" alt="Macrophotographie Ms. Brélévenez XIX">
+  <div class="ms-photo-caption">Gros plan — folio médian recto</div>
+  <div class="ms-links">
+    <a class="ms-link" href="assets/sermon_19_compressed.pdf"><span class="ms-link-icon">☞</span> Manuscrit original (PDF)</a>
+    <a class="ms-link" href="assets/Sermon19_BZH_retranscrit.html"><span class="ms-link-icon">☞</span> Transcription bretonne et traduction française (HTML)</a>
+  </div>
+  <p class="ms-analyse">Ce sermon sur la nécessité de la pénitence, rédigé en breton, forme avec le sermon 18 un diptyque pastoral cohérent : là où le sermon 18 s'adressait à la jeunesse en l'exhortant à ne pas différer sa conversion, le sermon 19 s'adresse à tous les fidèles, sans distinction d'âge, pour leur démontrer que la pénitence est la seule voie de salut ouverte à des hommes déjà souillés par le péché. La citation directrice — <em>Poenitentiam agite, appropinquavit enim regnum coelorum</em> (Mt 3, 2) — est celle du Baptiste dans le désert, ce qui confère d'emblée au discours un caractère d'appel urgent, presque prophétique. L'argumentation, en deux parties articulées autour de la nécessité puis des qualités requises de la pénitence, est l'une des plus rigoureusement construites du corpus. La première partie accumule les autorités — Jésus-Christ en Luc, Jean-Baptiste, Pierre, Paul, le concile de Trente, saint Cyprien, saint Thomas — pour établir que la pénitence n'est pas un conseil mais un commandement absolu, et que son refus aggrave le péché lui-même. La deuxième partie, sur les qualités d'une vraie pénitence, distingue trois conditions : le changement intérieur du cœur (<em>cor contritum et humiliatum</em>, augustinien), la manifestation extérieure dans les actes, et la promptitude — le refus de la pénitence différée. Ce dernier point donne lieu à l'analyse la plus psychologiquement fine du corpus : le prédicateur dissèque avec précision le mécanisme de l'ajournement indéfini, depuis la jeunesse jusqu'à la mort, en montrant par des exemples concrets (les malades qui retrouvent la santé sans changer de vie, les pécheurs qui meurent sans avoir eu le temps de se réconcilier) que la pénitence de la dernière heure est toujours suspecte de n'être que contrainte par les circonstances. La figure récurrente de la <em>secunda post naufragium tabula</em> — image patristique de la pénitence comme planche de salut après le naufrage du péché originel — traduit à la fois la tradition scolastique et la familiarité maritime du Trégor côtier dont est issu ce manuscrit.</p>
+  <div class="ms-analyse-tech"><strong>Note technique :</strong> La macrophotographie révèle un papier vergé réglé à la pointe sèche, aux lignes horizontales régulières et bien visibles, identique dans ses caractéristiques matérielles aux sermons 16 et 18, ce qui suggère que ces trois pièces appartiennent peut-être à un même cahier ou à un même lot de papier. La teinte du support est blanc crème légèrement jauni, avec une petite auréole d'humidité brunâtre dans le champ central de l'image, sans dommage majeur à la lisibilité. L'encre est ferro-gallique noire à brun très foncé, bien contrastée, d'oxydation faible à modérée. L'écriture est une cursive bretonne à module moyen-grand, à inclinaison droitière soutenue, avec des hastes allongées et des formes de lettres cohérentes avec celles des sermons 15 et 18 — ce qui renforce l'hypothèse d'un même scripteur pour l'ensemble des sermons bretons du corpus. Un détail graphique notable dans le champ photographié : le syntagme <em>Ar religion Gristen</em> (la religion chrétienne) est tracé avec un module légèrement agrandi et une pression plus ferme que le texte environnant, marquant une emphase orale ; de même, les insertions latines — <em>Estote Parati</em>, <em>iam Crucifixerunt Cum vitiis et Concupiscentiis</em>, <em>consepulti sumus cum X°</em> — sont intégrées sans changement d'outil ni de module, confirmant la pratique d'un bilinguisme latin-breton parfaitement intériorisé par le prédicateur. La présence d'un point tenu après certains mots-clés bretons signale des marques de ponctuation oratoire destinées à cadencer la diction en chaire.</div>
+</div>
+
+<!-- ─── MS. BRÉLÉVENEZ XX ─── -->
+<div class="ms-notice" id="ms-xx">
+  <div class="ms-notice-header">
+    <span class="ms-number">Ms. Brélévenez XX</span>
+    <span class="ms-title">Sermon pour une première communion — <em>Sinite pueros venire ad me</em></span>
+  </div>
+  <img class="ms-photo" src="assets/macro_sermon20a.jpg" alt="Macrophotographie Ms. Brélévenez XX — folio breton">
+  <div class="ms-photo-caption">Gros plan — folio médian (texte breton)</div>
+  <div class="ms-links">
+    <a class="ms-link" href="assets/sermon_20_compressed.pdf"><span class="ms-link-icon">☞</span> Manuscrit original (PDF)</a>
+    <a class="ms-link" href="assets/Sermon20_BZH_retranscrit.html"><span class="ms-link-icon">☞</span> Transcription bretonne et traduction française (HTML)</a>
+  </div>
+  <p class="ms-analyse">Ce sermon pour une première communion, rédigé en breton et fondé sur la parole de Jésus en Marc 10, 14 — <em>Sinite pueros venire ad me</em>, rendue en breton : <em>Laset ar vugale da dostaat din</em> —, est le dernier et le plus liturgiquement situé des sermons bretons du corpus. Son contexte d'usage est précis et unique dans l'ensemble : il s'agit d'une homélie prononcée lors d'une cérémonie de première communion, s'adressant simultanément aux enfants qui communient et à leurs parents et paroissiens témoins. Cette double destination structure toute la composition, qui alterne apostrophes aux enfants (<em>bugale</em>) et apostrophes aux fidèles adultes. L'argument central — Jésus-Christ, qui aimait les enfants lors de sa vie terrestre, continue de les appeler depuis son tabernacle — est développé à partir de la scène évangélique où les disciples voulaient éloigner les enfants, avant que le Sauveur ne les rappelle : <em>Sinite parvulos venire ad me</em>. La première partie du sermon élabore une théologie eucharistique de la première communion centrée sur trois dispositions requises — foi vive, conscience pure, amour ardent — que le prédicateur expose avec précision avant de lancer une double invitation solennelle : aux enfants préparés à s'avancer, aux non préparés à s'abstenir (<em>recedite, recedite</em>). La citation paulinienne de condamnation pour qui mange et boit indignement (<em>qui manducat et bibit indigne, judicium sibi manducat et bibit</em>) est intégrée dans les deux versions du texte, bretonne et française, soulignant que la gravité de l'enjeu est exprimée dans les mêmes termes pour les deux langues. La seconde partie, action de grâces après la communion, reprend le psaume 115 (<em>Quid retribuam Domino pro omnibus quae retribuit mihi</em>) et s'achève par une adresse aux parents, auxquels le prédicateur « rend » leurs enfants purifiés, leur enjoignant de conserver ce dépôt sacré par la fréquentation des sacrements et la sanctification personnelle — formule qui résume en une phrase la pastorale familiale bretonne du début du XIX<sup>e</sup> siècle.</p>
+  <img class="ms-photo" src="assets/macro_sermon20b.jpg" alt="Macrophotographie Ms. Brélévenez XX — folio breton"><div class="ms-analyse-tech"><strong>Note technique :</strong> Deux macrophotographies sont disponibles pour ce sermon, provenant de folios distincts et révélant deux situations matérielles différentes. La première image montre un papier vergé réglé à la pointe sèche, teinte crème-blanc légèrement jauni, cohérent avec les sermons 16, 18 et 19, ce qui confirme l'appartenance de l'ensemble des sermons bretons à un même support homogène. L'encre y est ferro-gallique brun-noir, bien contrastée, avec un tracé cursif breton à inclinaison droitière modérée et des formes de lettres stables, identiques à celles des sermons 18 et 19 — renforçant l'hypothèse d'un scripteur unique pour l'ensemble des pièces bretonnes du corpus. La seconde image montre en revanche un papier vergé non réglé, de teinte plus jaunâtre avec des lignes horizontales naturelles du vergé très visibles, suggérant que cette portion du manuscrit appartient à un cahier ou à un bifeuillet différent. L'écriture y est plus cursive et moins régulière, les interlignes plus variables, la pression légèrement moins ferme : il pourrait s'agir d'une section rédigée dans des conditions différentes, ou d'une main auxiliaire ayant complété un texte commencé par le scripteur principal. On note dans la première image la présence de deux croix marginales légères (×) au crayon ou à l'encre très pâle, visibles en bordure de ligne, qui constituent probablement des marques de renvoi ou d'attention oratoire — pratique de balisage du texte pour la lecture en chaire.</div>
+</div>
+
+<!-- ─── MS. BRÉLÉVENEZ XXI ─── -->
+<div class="ms-notice" id="ms-xxi">
+  <div class="ms-notice-header">
+    <span class="ms-number">Ms. Brélévenez XXI</span>
+    <span class="ms-title">Sermon sur la voie étroite et la prière — <em>Quam arcta via, quae ducit ad vitam !</em></span>
+  </div>
+  <img class="ms-photo" src="assets/macro_sermon21a.jpg" alt="Macrophotographie Ms. Brélévenez XXI — folio a">
+  <div class="ms-photo-caption">Gros plan — folio médian recto (a)</div>
+  <div class="ms-links">
+    <a class="ms-link" href="assets/sermon_21_compressed.pdf"><span class="ms-link-icon">☞</span> Manuscrit original (PDF)</a>
+    <a class="ms-link" href="assets/Sermon21retranscrit.html"><span class="ms-link-icon">☞</span> Transcription intégrale (HTML)</a>
+  </div>
+  <p class="ms-analyse">Ce sermon sur la voie étroite et la prière, dernier texte français du corpus, est incontestablement le plus littéraire et le plus ambitieux de l'ensemble sur le plan rhétorique. Son verset directeur — <em>Quam arcta via, quae ducit ad vitam !</em> (Mt 7, 14) — n'est pas développé comme une menace mais comme un constat anthropologique : la plupart des hommes ne cherchent pas Dieu parce qu'ils sont entièrement absorbés par les soins du corps. La démonstration passe par une galerie de types humains — le marin, le laboureur, le commerçant, le passant des places publiques — tous mus par des préoccupations temporelles, aucun occupé de son âme. Cette anthropologie du quotidien, qui rappelle les <em>Sermons</em> de Chrysostome dans leur observation de la vie urbaine, est doublée d'une métaphore filée particulièrement élaborée : l'âme est comparée successivement au conducteur d'un char, au pilote d'un vaisseau et au musicien qui tient l'instrument — quand elle relâche ou tend les cordes outre mesure, l'harmonie de la vertu se détruit. La deuxième partie, consacrée à la prière, développe une critique de la prière vaine et intéressée — qui demande beauté, richesses, honneurs — et lui oppose la formule du <em>Pater</em> comme seule prière juste. Les trois vertus théologales — foi, espérance, charité — sont ensuite traitées comme les objets propres de la prière chrétienne, dans un développement d'une belle ampleur : le passage sur l'espérance est particulièrement remarquable, opposant à l'incrédulité qui « descend dans le cœur comme la nuit avec toutes ses ténèbres » l'espérance qui débrouille le chaos et explique l'énigme de l'existence. La conclusion sur la charité, avec son évocation de la même table eucharistique dressée pour l'enfant de l'esclave et le fils de l'homme libre, introduit une dimension d'égalité évangélique et sociale qui dépasse le cadre pastoral ordinaire du corpus et fait de ce sermon le texte théologiquement le plus achevé de l'ensemble.</p>
+  <img class="ms-photo" src="assets/macro_sermon21b.jpg" alt="Macrophotographie Ms. Brélévenez XXI — folio a"><div class="ms-analyse-tech"><strong>Note technique :</strong> Deux macrophotographies couvrent ce sermon, révélant des situations matérielles nettement distinctes. La première image montre un cahier ouvert à plat, avec une reliure visible en bord droit — un fil ou cordon de couture noirci retenant les feuillets —, ce qui constitue la seule attestation directe dans ce corpus d'un manuscrit relié plutôt que constitué de feuillets volants. Le papier de ce folio est vergé non réglé, à teinte blanche légèrement grisée, avec un grain fin ; l'encre est ferro-gallique brun-noir d'oxydation faible, au trait net mais d'épaisseur légèrement variable selon les lignes, suggérant des rechargements fréquents de la plume. L'écriture est une cursive française de petit module, plus serrée que la plupart des autres sermons du corpus, avec des interlignes réduits et des liaisons très continues — caractéristiques d'une copie dense cherchant à économiser le support. La seconde image montre un folio distinct au papier vergé non réglé de teinte plus jaunâtre, avec un grand <em>O</em> initial formant une anse majestueuse à boucle ouverte, comparable au <em>C</em> initial du sermon 17. L'encre y est plus noire et plus contrastée, la pression plus ferme, le module plus grand et les interlignes plus larges — ce qui pourrait indiquer un scripteur différent, ou le même scripteur dans un état de rédaction plus posée, peut-être pour une mise au net du début du sermon. La coexistence de ces deux mains ou états dans un seul cahier relié est un indice précieux sur le processus de composition : le prédicateur aurait pu travailler en plusieurs sessions ou recopier une ouverture soignée avant de poursuivre en cursive courante.</div>
+</div>
+
+<!-- ─── MS. BRÉLÉVENEZ XXII ─── -->
+<div class="ms-notice" id="ms-xxii">
+  <div class="ms-notice-header">
+    <span class="ms-number">Ms. Brélévenez XXII</span>
+    <span class="ms-title">Sermon sur le péché mortel — <em>Similes estis sepulchris dealbatis</em></span>
+  </div>
+  <img class="ms-photo" src="assets/macro_sermon22a.jpg" alt="Macrophotographie Ms. Brélévenez XXII — folio a">
+  <div class="ms-photo-caption">Gros plan — folio médian recto (a)</div>
+  <div class="ms-links">
+    <a class="ms-link" href="assets/sermon_22_compressed.pdf"><span class="ms-link-icon">☞</span> Manuscrit original (PDF)</a>
+    <a class="ms-link" href="assets/Sermon22retranscrit.html"><span class="ms-link-icon">☞</span> Transcription bretonne et traduction française (HTML)</a>
+  </div>
+  <p class="ms-analyse">Ce sermon sur le péché mortel, rédigé en breton et fondé sur la parole de Jésus aux Pharisiens en Matthieu 23 — <em>Similes estis sepulchris dealbatis</em>, « Vous êtes semblables aux sépulcres blanchis » —, est le plus complexe et le plus théologiquement dense des sermons bretons du corpus. Il se distingue par sa structure tripartite rigoureuse, appliquée à l'analyse des effets du péché mortel sur l'âme : premier effet, il tue l'âme en lui ôtant la grâce de Dieu (<em>Annec quæ peccavit, ipsa morietur</em>) ; deuxième effet, il la dépouille des vertus acquises (<em>nident Aspoliavit eam</em>) ; troisième effet, il rend toutes ses actions inutiles et sans mérite. Cette analyse trifide, héritée de la théologie morale scolastique, est déployée avec une densité de références patristiques remarquable : saint Paul, saint Augustin, saint Cyprien, saint Bernard, saint Basile, Isaïe, Jérémie, saint Jacques, saint Jean Chrysostome sont convoqués dans les seules premières pages. L'image directrice du sépulcre blanchi — beau au dehors, plein d'ossements au dedans — est développée dans une lecture ecclésiologique et morale qui vise directement l'hypocrisie du pécheur mondain : devant les hommes il paraît vivant et respectable, devant Dieu il est un mort que son corps transporte comme un cercueil (<em>fumus tuum ipse circumportat</em>). La partie centrale, consacrée à la méditation sur la Passion, emploie un procédé rhétorique d'une rare intensité : le prédicateur demande à ses auditeurs de se placer en esprit entre Jésus crucifié d'un côté et leurs péchés de l'autre — <em>inter hæc duo positis</em> —, et de mesurer qu'ils sont à la fois la cause et l'instrument de cette crucifixion. La conclusion suit le modèle du discours de saint Pierre aux Israélites après la Pentecôte, dont les auditeurs se regardaient en demandant <em>quid faciemus ?</em> — et le prédicateur reprend la réponse apostolique : <em>Pœnitentiam agite</em>. Le signe ✠, reproduit dans le texte breton comme marque d'adresse directe à l'assemblée (<em>mes frères</em> ou <em>chrétiens</em> selon le contexte), constitue un dispositif oratoire propre à ce seul sermon du corpus.</p>
+  <img class="ms-photo" src="assets/macro_sermon22b.jpg" alt="Macrophotographie Ms. Brélévenez XXII — folio a"><div class="ms-analyse-tech"><strong>Note technique :</strong> Deux macrophotographies couvrent ce sermon et révèlent un support homogène mais deux situations d'encrage distinctes. Le papier est dans les deux cas un vergé non réglé de teinte blanche à crème légèrement jaunie, sans foxing notable dans les champs photographiés, de bonne qualité et bien conservé. La première image montre une écriture bretonne cursive à module moyen-grand, à inclinaison droitière modérée, avec des hastes généreuses et des jambages bien développés ; l'encre y est ferro-gallique brun foncé, d'oxydation moyenne, avec un trait régulier et une pression soutenue. La majuscule initiale <em>C</em> formant une anse à boucle fermée avec un petit crochet céphalique rappelle de près le <em>C</em> du sermon 17 et l'<em>O</em> du sermon 21, confirmant une main commune ou un modèle graphique partagé dans l'ensemble du corpus français et breton. La seconde image montre en revanche une encre noire plus intense, d'oxydation très faible, avec un contraste accru sur le support — ce qui suggère soit une encre plus fraîche, soit une plume plus généreusement chargée pour ce folio. La lettre majuscule <em>G</em> initiale (<em>Goelet</em>) est tracée avec une anse à boucle ouverte d'un graphisme très élaboré, comparable aux lettres d'apparat du sermon 17. L'alternance dans ce seul sermon entre deux états d'encrage — sans changement sensible du support ni de la main — est cohérente avec une rédaction en plusieurs séances, où la plume a été rechargée à des concentrations différentes.</div>
+</div>
+
+<!-- ─── MS. BRÉLÉVENEZ XXIII ─── -->
+<div class="ms-notice" id="ms-xxiii">
+  <div class="ms-notice-header">
+    <span class="ms-number">Ms. Brélévenez XXIII</span>
+    <span class="ms-title">Sermon pour la fête du Sacré-Cœur — <em>Erit cor meum ibi cunctis diebus</em></span>
+  </div>
+  <img class="ms-photo" src="assets/macro_sermon23a.jpg" alt="Macrophotographie Ms. Brélévenez XXIII — folio a">
+  <div class="ms-photo-caption">Gros plan — folio médian recto (a)</div>
+  <div class="ms-links">
+    <a class="ms-link" href="assets/sermon_23_compressed.pdf"><span class="ms-link-icon">☞</span> Manuscrit original (PDF)</a>
+    <a class="ms-link" href="assets/Sermon23retranscrit.html"><span class="ms-link-icon">☞</span> Transcription bretonne et traduction française (HTML)</a>
+  </div>
+  <p class="ms-analyse">Ce sermon pour la fête du Sacré-Cœur, rédigé en breton et articulé autour du verset <em>Erit cor meum ibi cunctis diebus</em>, est le document le plus explicitement festif et dévotion­nel du corpus breton. Son ancrage liturgique est précis — la fête du Sacré-Cœur, instituée universellement en 1856 par Pie IX mais déjà célébrée dans de nombreux diocèses français depuis le XVIII<sup>e</sup> siècle sous l'influence de saint Jean Eudes et de la bienheureuse Marguerite-Marie Alacoque — ce qui en fait probablement l'un des sermons les plus tardifs de l'ensemble, postérieur à 1830 au moins. L'exorde, fondé sur la question rhétorique de saint Paul (<em>Quis ergo nos separabit a charitate Christi ?</em>, Rm 8, 35), est développé dans une direction méditative et affective : le prédicateur invite l'assemblée à contempler les preuves successives de l'amour de Jésus-Christ pour les hommes — vie cachée à Nazareth, vie publique, Passion, institution de l'Eucharistie — avant d'aborder le don du Cœur comme ultime dépassement de cet amour. La théologie eucharistique qui sous-tend le sermon est entièrement ordonnée à la dévotion du Sacré-Cœur : la Présence Réelle dans le tabernacle est présentée non comme un mystère abstrait mais comme une relation personnelle quotidienne et attentive, que le pécheur ingrat néglige ou offense. Les trois effets du véritable amour selon saint Justinien — penser souvent à l'aimé, lui accorder ce qu'il désire, souffrir pour lui sans se plaindre — structurent la deuxième partie comme un examen de conscience pratique adressé directement aux fidèles. La question finale — <em>Amas me ?</em>, celle-là même que le Christ posa à Pierre au bord du lac — constitue la pointe rhétorique de l'ensemble : retournée vers l'assemblée, elle force chaque auditeur à se mesurer à l'Apôtre et à répondre en son for intérieur. La citation augustinienne implicite — <em>agnoscit bos possessorem suum</em> (Is 1, 3) — appliquée à l'insensibilité humaine envers Dieu, rapproche ce sermon des sermons sur l'amour de Dieu (sermon 16) et confirme la cohérence doctrinale d'ensemble du corpus.</p>
+  <img class="ms-photo" src="assets/macro_sermon23b.jpg" alt="Macrophotographie Ms. Brélévenez XXIII — folio a"><div class="ms-analyse-tech"><strong>Note technique :</strong> Deux macrophotographies couvrent ce sermon et révèlent deux situations d'écriture nettement contrastées. La première image montre un papier vergé non réglé de teinte blanche à crème légèrement jaunie, sans défaut majeur dans le champ photographié, avec une encre ferro-gallique brun-noir d'oxydation faible et un trait vif. L'écriture est une cursive bretonne de module moyen, à interlignes réguliers et inclinaison droitière modérée ; les hastes sont moins développées que dans les sermons 18 et 19, les jambages plus courts — ce qui confère à la page une densité visuelle plus grande. Les mots bretons et les insertions latines (<em>Per tribulationes multas</em>, <em>de corde exunt cogitationes</em>) sont intégrés sans variation de module, confirmant la maîtrise du bilinguisme habituelle dans ce groupe de sermons. La seconde image est prise en plan légèrement oblique sur un cahier ouvert, révélant plusieurs colonnes de texte visibles simultanément sur des folios en regard — configuration qui suggère un cahier de format à colonnes ou un bifolium retourné. L'écriture y est plus serrée, les interlignes plus resserrés, avec une encre plus noire et plus contrastée que dans la première image. Cette variation d'encrage entre les deux folios photographiés, déjà observée dans le sermon 22, est cohérente avec des séances de rédaction distinctes au sein d'un même cahier, entre lesquelles la concentration de l'encre ou la plume elle-même ont été renouvelées.</div>
+</div>
+
+<!-- ─── MS. BRÉLÉVENEZ XXIV ─── -->
+<div class="ms-notice" id="ms-xxiv">
+  <div class="ms-notice-header">
+    <span class="ms-number">Ms. Brélévenez XXIV</span>
+    <span class="ms-title">Sermon sur les bienfaits miraculeux du christianisme — <em>Venite ad me omnes qui laboratis et onerati estis</em></span>
+  </div>
+  <img class="ms-photo" src="assets/macro_sermon24a.jpg" alt="Macrophotographie Ms. Brélévenez XXIV — folio a">
+  <div class="ms-photo-caption">Gros plan — folio médian recto (a)</div>
+  <div class="ms-links">
+    <a class="ms-link" href="assets/sermon_24_compressed.pdf"><span class="ms-link-icon">☞</span> Manuscrit original (PDF)</a>
+    <a class="ms-link" href="assets/Sermon24retranscrit.html"><span class="ms-link-icon">☞</span> Transcription intégrale (HTML)</a>
+  </div>
+  <p class="ms-analyse">Ce sermon sur les bienfaits miraculeux du christianisme est, avec le sermon 17, l'un des deux textes apologétiques du corpus les plus explicitement ancrés dans la conjoncture politique et intellectuelle du second quart du XIX<sup>e</sup> siècle. Son verset directeur — <em>Venite ad me omnes qui laboratis et onerati estis et ego reficiam vos</em> (Mt 11, 28) — est moins le point de départ d'une exégèse que le prétexte d'une démonstration : le prédicateur entend montrer que le christianisme est la seule force civilisatrice durable, en opposant sa fécondité charitable à la stérilité prétendue de l'islam et à la dégradation morale de la Chine — arguments récurrents dans la littérature apologétique catholique de l'époque (Chateaubriand, de Bonald, Lacordaire). La mention nominale des régicides et des sociétés secrètes — Fieschi, Pépin, Alibaud, Meunier, Darmès — tous auteurs d'attentats contre Louis-Philippe entre 1835 et 1840 — fournit un <em>terminus post quem</em> précis : le sermon ne peut être antérieur à 1840, et son ton de réquisitoire contre le fouriérisme et le saint-simonisme le situe dans le contexte des grandes missions populaires urbaines de la Monarchie de Juillet, auxquelles participaient activement les jésuites et les lazaristes. La structure du sermon est délibérément cumulative plutôt que syllogistique : une série de récits héroïques — les Ursulines de Dieppe fondant l'hôpital de Québec, les filles de la Charité à Brienne en 1814, le religieux du Saint-Bernard sauvant le voyageur des Alpes — constitue une sorte d'hagiographie collective de la charité catholique, dont chaque épisode est présenté comme une réfutation par les faits de l'accusation d'obscurantisme portée contre l'Église. La figure de Vincent de Paul, désigné sans être nommé (« un homme qui est le génie de la miséricorde »), traverse le cœur du sermon comme le paradigme de la charité organisée. La péroraison, opposant le peuple élevé dans la foi à celui élevé hors de la foi, est un topos du catholicisme social de cette période, que l'on retrouve presque mot pour mot dans plusieurs des sermons de Lacordaire à Notre-Dame de Paris (1835–1836).</p>
+  <img class="ms-photo" src="assets/macro_sermon24b.jpg" alt="Macrophotographie Ms. Brélévenez XXIV — folio a">
+  <div class="ms-analyse-tech"><strong>Note technique :</strong> Deux macrophotographies sont disponibles pour ce sermon, révélant des zones distinctes du même manuscrit. La première image montre un papier vergé réglé à la pointe sèche, avec des lignes horizontales clairement déprimées dans le support, identiques à celles observées dans les sermons 16 et 18 — support probablement issu du même lot. La teinte est blanc-gris légèrement jaunie, sans foxing notable. L'encre est ferro-gallique noire d'oxydation très faible, au trait vif et bien contrasté. L'écriture est une cursive française de grand module, avec une majuscule initiale <em>C</em> formant une anse à boucle ouverte très développée — l'une des plus amples du corpus, comparable au <em>C</em> des sermons 17 et 22. Les mots clés visibles — <em>à la contemplation</em>, <em>à la solitude</em> — sont tracés avec une régularité et une fluidité remarquables, l'inclinaison droitière étant très constante, la pression soutenue et uniforme. La seconde image montre un folio différent, de teinte plus jaunâtre, avec un encrage légèrement plus brun — oxydation un peu plus avancée — et un tracé dont les interlignes sont plus serrés. La majuscule <em>V</em> (ou <em>L</em>) initiale visible en haut à droite est tracée avec le même type d'anse à boucle ouverte que dans la première image, confirmant la continuité de la main. On note dans ce second folio la présence de lettres fantômes en transparence provenant du folio verso, ce qui indique que le papier, bien que de bonne qualité, est suffisamment fin pour laisser passer l'encre ferro-gallique par effet de translucidité.</div>
+</div>
+
+<!-- ─── MS. BRÉLÉVENEZ XXV ─── -->
+<div class="ms-notice" id="ms-xxv">
+  <div class="ms-notice-header">
+    <span class="ms-number">Ms. Brélévenez XXV</span>
+    <span class="ms-title">Traité de théologie morale — <em>De Præceptis Decalogi · De Spe · De Religione</em></span>
+  </div>
+  <img class="ms-photo" src="assets/macro_sermon25a.jpg" alt="Macrophotographie Ms. Brélévenez XXV — folio a">
+  <div class="ms-photo-caption">Gros plan — folio médian recto (a)</div>
+  <div class="ms-links">
+    <a class="ms-link" href="assets/sermon_25_compressed.pdf"><span class="ms-link-icon">☞</span> Manuscrit original (PDF)</a>
+    <a class="ms-link" href="assets/Sermon25retranscrit.html"><span class="ms-link-icon">☞</span> Transcription et traduction intégrales (HTML)</a>
+  </div>
+  <p class="ms-analyse">Ce document est le seul du corpus à ne pas être un sermon. Il s'agit d'un traité de théologie morale rédigé principalement en latin, avec des développements en français, dont la nature même — la langue, le genre, la structure, le contenu — le distingue radicalement de l'ensemble des pièces précédentes et pose des questions d'identification et de provenance qui méritent un commentaire étendu.
+
+  <br><br>Sur le plan formel, le texte est organisé en <em>capita</em> (chapitres) et <em>articuli</em> (articles) successifs — <em>Caput prim. De Præceptis Decalogi</em>, <em>Art. 2. De Spe</em>, puis un développement <em>De Religione</em> — selon la structure canonique des traités de théologie scolastique tels qu'ils étaient enseignés dans les séminaires et les facultés de théologie catholiques du XVII<sup>e</sup> au XIX<sup>e</sup> siècle. Cette architecture rappelle directement les <em>Institutiones theologiae moralis</em> d'Alphonse de Liguori ou les manuels de théologie morale utilisés dans les séminaires français post-concordataires, notamment les <em>Institutiones theologicae</em> de Le Tourneux ou celles en usage au séminaire de Saint-Brieuc dans la première moitié du XIX<sup>e</sup> siècle.
+
+  <br><br>Sur le plan du contenu, le traité couvre en quelques folios une matière considérable. La partie <em>De Spe</em> distingue rigoureusement l'objet matériel et l'objet formel de l'espérance théologale (<em>objectum spei est Deus : formale, bonitas ejus : formale quod est fidelitas divina</em>), oppose l'espérance infuse reçue au baptême (<em>certo in baptismo infusa</em>) aux vertus acquises (<em>quae dicuntur acquisitae</em>), et classe les péchés contre l'espérance — désespoir et présomption — avec une précision canonique qui suppose une formation dogmatique solide. La partie <em>De Religione</em> traite successivement du serment (<em>juramentum</em>), du vœu (<em>votum</em>), du sacrilège — avec les distinctions classiques entre sacrilège réel, personnel et local — et débouche sur une série de questions de cas (<em>quaestiones</em>) d'une précision remarquable : vol dans une église, toucher du calice vide, profanation de l'huile sainte, excommunication réservée au souverain pontife ou à l'évêque. Ces <em>cas de conscience</em> correspondent très exactement au genre des <em>casus theologici</em> traités lors des retraites pastorales annuelles des diocèses, où le clergé était soumis à un examen périodique de théologie morale pratique.
+
+  <br><br>Un passage est d'un intérêt historique exceptionnel : la question sur l'obligation d'assister à la messe paroissiale pendant trois dimanches consécutifs est suivie d'une réponse précisément datée et localisée — <em>Episcopus Sancti-Brioci, in schola Theologiae praesidens, hanc doctrinam suam fecit et approbavit die 18 julii 1833 — et praesertim in Recessu pastorali ejusdem anni qui mense septembris Sancti-Brioci habitus fuit</em>. Cette note situe le document dans le cadre de la retraite pastorale du clergé du diocèse de Saint-Brieuc de septembre 1833, présidée par l'évêque en personne. Le scripteur n'est donc pas un simple prédicateur de paroisse mais un clerc en formation ou en exercice pastoral, ayant assisté à ces sessions et consigné les décisions doctrinales de son évêque dans ce document de travail. La présence, dans les mêmes folios, de notes éparses sur les conciles œcuméniques (Nicée I et II, Constantinople I, II, III, Éphèse, Chalcédoine, avec mention des hérésies nestorienne, eutychéenne et monothélite) confirme qu'il s'agit d'un cahier de cours ou de notes pastorales, plutôt que d'un texte destiné à la prédication. Les sections en français mêlées au latin latin — notamment sur le magnétisme animal et le somnambulisme, traités comme une question de morale pastorale susceptible de <em>relations avec le démon</em> — révèlent une date compatible avec la vogue du mesmérisme dans les années 1820–1840, et une préoccupation pastorale bien attestée dans le clergé breton de cette période.
+
+  <br><br>La présence de ce traité au sein du corpus de Brélévenez suggère que le ou les rédacteurs des sermons du corpus et l'auteur de ce traité appartenaient au même milieu clérical — vraisemblablement un prêtre du diocèse de Saint-Brieuc, formé au séminaire diocésain dans les années 1820–1830, ayant conservé ensemble ses notes de théologie et ses textes de prédication comme instruments de travail pastoral.</p>
+  
+  <img class="ms-photo" src="assets/macro_sermon25b.jpg" alt="Macrophotographie Ms. Brélévenez XXV — folio a">
+  <div class="ms-analyse-tech"><strong>Note technique :</strong> Les deux macrophotographies disponibles révèlent des conditions matérielles distinctes de celles des sermons du corpus. La première image montre un papier vergé non réglé de teinte blanc-gris légèrement jauni, sans foxing notable dans le champ photographié, avec une encre ferro-gallique brune d'oxydation moyenne tirant sur le sépia. Le module de l'écriture est sensiblement plus petit que dans la plupart des sermons — écriture de notes plutôt que d'une copie destinée à la lecture en chaire — avec des interlignes réduits et des liaisons très continues. Un accident d'encrage est clairement visible au centre de la première image : deux gouttes d'encre tombées sur le support lors de la rédaction, l'une au-dessus du mot <em>formale</em>, l'autre à la jointure de <em>Art 2. De Spe</em> — détail d'authenticité qui confirme que le document est bien une copie de travail rédigée à la plume, et non une transcription postérieure. Les titres d'articles — <em>Art 2. De Spe</em> — sont tracés avec un module légèrement accru et un tracé plus appuyé, distinguant visuellement la structure des développements. La seconde image montre un folio de teinte très proche, mais l'encre y est plus brune et plus oxydée, avec un trait moins vif — peut-être un folio antérieur ou rédigé à un moment où l'encre avait davantage vieilli. La majuscule <em>C</em> initiale de <em>Caput</em> est tracée avec une anse à boucle ouverte comparable à celles observées dans les sermons 17, 22 et 24, ce qui renforce l'hypothèse d'une main commune ou apparentée pour l'ensemble du corpus. L'apparition de gouttes d'encre — accident absent des sermons français du corpus — est cohérente avec une rédaction rapide, sous dictée ou de mémoire, dans le cadre d'une session de cours ou d'une retraite pastorale.</div>
+</div>
+
+
+<!-- ─── MS. BRÉLÉVENEZ XXVI ─── -->
+<div class="ms-notice" id="ms-xxvi">
+  <div class="ms-notice-header">
+    <span class="ms-number">Ms. Brélévenez XXVI</span>
+    <span class="ms-title">Sermon sur la Confirmation — <em>Ecce evangeliso vobis gaudium magnum</em></span>
+  </div>
+  <img class="ms-photo" src="assets/macro_sermon26a.jpg" alt="Macrophotographie Ms. Brélévenez XXVI">
+  <div class="ms-photo-caption">Gros plan — folio 1 recto</div>
+  <div class="ms-links">
+    <a class="ms-link" href="assets/sermon_26_compressed.pdf"><span class="ms-link-icon">☞</span> Manuscrit original (PDF)</a>
+    <a class="ms-link" href="assets/Sermon26retranscrit.html"><span class="ms-link-icon">☞</span> Transcription intégrale (HTML)</a>
+  </div>
+  <p class="ms-analyse">Ce sermon de retraite préparatoire à la Confirmation s'ouvre sur la parole de l'ange aux bergers (Lc 2, 10) et en fait le paradigme de toute annonce sacramentelle : l'Église répète à chaque génération la Bonne Nouvelle inaugurale, et la Confirmation en est l'accomplissement adulte. La structure rhétorique est tripartite et s'appuie sur trois lieux sacrés convoqués comme témoins eschatologiques — la chaire, le tribunal de la pénitence et la table de la Communion —, chacun appelé à témoigner « pour ou contre » le confirmand au jugement dernier. Le sermon s'adresse simultanément à deux auditoires distincts : les enfants qui entament leur retraite, et leurs parents, dont la responsabilité éducative est longuement instruite. Cette double interpellation traduit une ecclésiologie de la transmission : la grâce sacramentelle ne s'effectue pleinement que si elle est reçue dans une famille chrétienne pratiquante. L'usage de l'épisode de la robe baptismale présentée à l'apôtre constitue un topos catéchétique d'origine médiévale, ici mis au service d'une morale de la fidélité post-baptismale. La langue bretonne du texte, mêlée de formules latines liturgiques, témoigne d'une prédication bilingue vraisemblablement destinée à une paroisse rurale du Trégor ou du Goëlo au tournant du XIX<sup>e</sup> siècle, dans un contexte de renouveau missionnaire marqué par l'influence des congrégations lazaristes et de la Mission de Bretagne.</p>
+  <img class="ms-photo" src="assets/macro_sermon26b.jpg" alt="Macrophotographie Ms. Brélévenez XXVI">
+  <div class="ms-analyse-tech"><strong>Note technique :</strong> Les deux macrophotographies révèlent un papier vergé de grammage moyen à fort, présentant un jaunissement prononcé et des taches d'humidité diffuses, en particulier dans les angles et entre les lignes — probables traces de foxing ancien. L'encre ferro-gallique a viré au brun soutenu avec des halos caractéristiques de suroxydation localisée, visibles autour des pleins les plus épais. La main est cursive régulière, d'un tracé énergique et bien formé : hampes hautes et droites, panses généreuses sur les lettres <em>g</em>, <em>d</em> et <em>o</em>, et liaisons continues entre mots sans quasi levée de plume. On observe sur le premier cliché un module d'écriture notable — les mots <em>tribunal</em> et <em>communion</em> occupent une ligne entière — suggérant soit une mise en valeur délibérée des termes sacramentels, soit un saut de page rhétorique. Le second cliché présente en haut du folio une ligne en écriture plus petite et plus inclinée, distincte du corps principal, vraisemblablement une mention marginale ou une correction interlinéaire ajoutée postérieurement. L'absence de réglure visible et la légère ondulation des lignes confirment une rédaction sur papier libre, sans support rigide.</div>
+</div>
+
+<!-- ─── MS. BRÉLÉVENEZ XXVII ─── -->
+<div class="ms-notice" id="ms-xxvii">
+  <div class="ms-notice-header">
+    <span class="ms-number">Ms. Brélévenez XXVII</span>
+    <span class="ms-title">Sermon sur la tiédeur — <em>Spiritu ferventes, Domino servientes</em></span>
+  </div>
+  <img class="ms-photo" src="assets/macro_sermon27a.jpg" alt="Macrophotographie Ms. Brélévenez XXVII">
+  <div class="ms-photo-caption">Gros plan — folio 1 recto</div>
+  <div class="ms-links">
+    <a class="ms-link" href="assets/sermon_27_compressed.pdf"><span class="ms-link-icon">☞</span> Manuscrit original (PDF)</a>
+    <a class="ms-link" href="assets/Sermon27retranscrit.html"><span class="ms-link-icon">☞</span> Transcription intégrale (HTML)</a>
+  </div>
+  <p class="ms-analyse">Ce sermon sur la tiédeur dans le service de Dieu, fondé sur l'injonction paulinienne de Romains 12 (<em>Spiritu ferventes, Domino servientes</em>), se distingue par sa tonalité entièrement française et sa facture rhétorique soignée, qui le rapproche davantage de la tradition homilétique néo-classique que de la prédication populaire bretonne. Le prédicateur y développe une théologie de la <em>vie de foi</em> entendue comme substitution des sentiments évangéliques aux sentiments naturels — une formulation d'inspiration sulpicienne que l'on retrouve chez Tronson et dans les <em>Conférences ecclésiastiques</em> du séminaire de Paris. La tiédeur y est diagnostiquée non comme un péché mais comme une <em>extinction progressive</em> de la ferveur sacramentelle, dont les symptômes sont minutieusement décrits : attitude distraite à la messe, communion sans préparation ni action de grâce, tolérance complaisante envers les péchés véniels. L'argumentation s'appuie sur deux <em>exempla</em> historiques remarquables — la conversion d'Alexandre devant le Grand Prêtre, et la stupeur de l'empereur Valens à Césarée face à saint Basile —, qui servent à démontrer que la ferveur extérieure visible est une force d'édification et de conversion. Le sermon culmine dans une phénoménologie de l'habitude liturgique, décrite comme le principal ennemi de la piété : l'habitude efface la crainte du sacré et dégrade les pratiques en routine vide, à l'image des Israélites murmurateurs malgré les prodiges divins. Cette réflexion sur la mémoire spirituelle et la première ferveur constitue l'une des pages les plus intérieures du corpus.</p>
+  <img class="ms-photo" src="assets/macro_sermon27b.jpg" alt="Macrophotographie Ms. Brélévenez XXVII">
+  <div class="ms-analyse-tech"><strong>Note technique :</strong> Les deux macrophotographies révèlent un support très différent des autres pièces du corpus : le papier est réglé à la mine de plomb ou à la pointe sèche, avec des lignes horizontales régulièrement espacées nettement visibles, indiquant l'usage d'un cahier préparé ou d'un papier de copiste. Le grammage est léger à moyen, et le papier présente un blanchiment notable par rapport aux feuillets brunis des sermons bretons, ce qui suggère une datation ou une provenance différente. L'encre est noire à brun très soutenu, vraisemblablement ferro-gallique, avec peu d'oxydation et des traits d'une grande régularité. L'écriture est calligraphique et posée, nettement distincte de la cursive rapide des sermons en breton : les majuscules sont ornées de boucles d'attaque élaborées — particulièrement visibles sur le <em>V</em> de <em>Voulez</em> et le <em>P</em> de <em>Perenu</em> dans le premier cliché —, et les mots sont bien espacés et lisiblement formés. Le second cliché montre une numérotation de point en chiffres (<em>6/4</em>) insérée entre deux lignes, qui correspond vraisemblablement à un renvoi de plan ou à une subdivision de partie, témoignant d'une préparation structurée du discours. La qualité graphique d'ensemble évoque la main d'un clerc formé aux exercices d'écriture académiques, peut-être un séminariste ou un prêtre de formation urbaine.</div>
+</div>
+
+<!-- ─── MS. BRÉLÉVENEZ XXVIII ─── -->
+<div class="ms-notice" id="ms-xxviii">
+  <div class="ms-notice-header">
+    <span class="ms-number">Ms. Brélévenez XXVIII</span>
+    <span class="ms-title">Sermon sur la charité fraternelle — <em>Diliges proximum tuum sicut te ipsum</em></span>
+  </div>
+  <img class="ms-photo" src="assets/macro_sermon28a.jpg" alt="Macrophotographie Ms. Brélévenez XXVIII">
+  <div class="ms-photo-caption">Gros plan — folio 1 recto</div>
+  <div class="ms-links">
+    <a class="ms-link" href="assets/sermon_28_compressed.pdf"><span class="ms-link-icon">☞</span> Manuscrit original (PDF)</a>
+    <a class="ms-link" href="assets/Sermon28retranscrit.html"><span class="ms-link-icon">☞</span> Transcription intégrale (HTML)</a>
+  </div>
+  <p class="ms-analyse">Ce sermon sur la charité fraternelle, fondé sur le commandement évangélique de Matthieu 22, 39 (<em>Diliges proximum tuum sicut te ipsum</em>), est l'une des pièces théologiquement les plus élaborées du corpus breton. Rédigé en breton trégorrois avec des citations latines encadrantes, il développe une doctrine de la charité en trois registres distincts. Le premier, anthropologique, pose la question du fondement de l'amour du prochain : ni la nature, ni l'intérêt, ni les qualités humaines ne sauraient en constituer le motif légitime, seul Dieu pouvant servir de principe et d'objet de tout amour véritable. Le deuxième registre, scripturaire et patristique, s'appuie sur saint Paul (<em>Omnia credit, omnia sperat, omnia sustinet</em>, 1 Co 13) et sur saint Jean Chrysostome pour définir les marques de la charité authentique : patience, douceur, absence de jalousie, d'orgueil et d'intérêt propre. Le troisième registre, pastoral et eschatologique, traite de la responsabilité de chacun dans le salut du prochain : le mauvais exemple est érigé en péché grave dont Dieu demandera un compte terrible, tandis que la conversion des âmes est présentée comme la forme la plus haute de l'amour fraternel, supérieure même au partage des biens matériels. Le sermon se clôt sur une citation de saint Pierre exhortant à dépouiller toute malice, et sur une prière finale pour le renouvellement de la face de la terre — image empruntée au Psaume 104 —, inscrivant ainsi la charité individuelle dans une perspective cosmique de régénération. L'usage du breton trégorrois dans un discours aussi densément articulé témoigne d'une maîtrise rhétorique et théologique remarquable, et d'un souci constant d'atteindre une assemblée rurale dans sa propre langue.</p>
+  <img class="ms-photo" src="assets/macro_sermon28b.jpg" alt="Macrophotographie Ms. Brélévenez XXVIII">
+  <div class="ms-analyse-tech"><strong>Note technique :</strong> Les deux macrophotographies présentent un papier vergé non réglé de grammage moyen à fort, à surface lisse et relativement homogène, sans foxing notable mais avec un léger jaunissement ambiant. Le premier cliché révèle une encre noire à noir-brun très dense, appliquée avec une plume à bec large donnant des pleins généreux et des déliés nets — le contraste est particulièrement marqué sur les majuscules ornées, notamment le <em>D</em> de <em>Diliges</em> en tête de folio, dont la hampe bouclée occupe presque deux interlignes. L'écriture alterne, de manière caractéristique, des mots en latin traités en capitales ou semi-cursive formelle (<em>Diliges proximum tuum</em>) et des lignes en breton cursif courant, révélant deux registres graphiques distincts assumés par la même main. Le second cliché montre une zone de transition entre une ligne en majuscules espacées (<em>An den a z[…]</em>) et des lignes en cursive plus serrée, avec une citation latine (<em>Faciamus hominem a[d]</em>) rendue en italique inclinée, distinguée typographiquement du corps breton par l'inclinaison et la réduction du module. On observe en outre une légère irrégularité de la marge gauche, certaines lignes débutant en retrait, suggérant une structure de plan sous-jacente correspondant aux divisions thématiques du discours.</div>
+</div>
+<!-- ── NOTES ET RÉFÉRENCES ─── -->
+<div class="footnotes">
+  <div class="fn-title">Notes et références</div>
+  <div class="fn"><div class="fn-n">1.</div><div>Sur la cinétique de dégradation du papier artisanal : W. J. Barrow, <em>Deterioration of Book Stock : Causes and Remedies</em>, Virginia State Library, 1959 ; M. Bicchieri et al., « Foxing of Paper : biochemical characterization », <em>Journal of Cultural Heritage</em>, 3 (2002), p. 229–234.</div></div>
+  <div class="fn"><div class="fn-n">2.</div><div>Sur l'encre ferro-gallique et son vieillissement : C. Krekel, « The chemistry of historical iron gall inks », <em>International Journal of Forensic Document Examiners</em>, 5 (1999), p. 54–58 ; M. C. Sistach, « Iron gall inks : properties, degradation and conservation treatments », <em>Restaurator</em>, 27 (2006), p. 159–177.</div></div>
+  <div class="fn"><div class="fn-n">3.</div><div>Ch. Paillasson, <em>L'art d'écrire</em>, Paris, 1763 ; <em>Encyclopédie ou Dictionnaire raisonné des sciences, des arts et des métiers</em>, art. « Plume », vol. XII (1765).</div></div>
+  <div class="fn"><div class="fn-n">4.</div><div>Sur l'abandon du <em>s</em> long : J.-P. Seguin, <em>La langue française au XVIII<sup>e</sup> siècle</em>, Paris, Bordas, 1972, p. 78–82. La réforme typographique de Firmin Didot (1798) généralise le <em>s</em> rond dans les imprimés ; dans les manuscrits personnels, l'abandon est plus progressif et variable selon les individus et les régions, sans lien mécanique direct avec la réforme imprimée.</div></div>
+  <div class="fn"><div class="fn-n">5.</div><div>Sur le syntagme « esprits forts » : A. Soboul, <em>Dictionnaire historique de la Révolution française</em>, Paris, PUF, 1989, art. « Libre pensée » ; R. Mortier, <em>Le « tableau littéraire » de la France au XVIII<sup>e</sup> siècle</em>, Bruxelles, Palais des Académies, 1983.</div></div>
+  <div class="fn"><div class="fn-n">6.</div><div>Le terme <em>phases</em> dans un sens métaphorique élargi est documenté de façon régulière dans les textes français à partir de Buffon (<em>Histoire naturelle</em>, 1749) et de l'<em>Encyclopédie</em> (art. « Phase », 1765). Des usages figurés occasionnels peuvent être trouvés plus tôt, mais ils restent très rares et isolés avant le milieu du XVIII<sup>e</sup> siècle.</div></div>
+  <div class="fn"><div class="fn-n">7.</div><div>Sur le latin ecclésiastique régional et ses particularités phonologiques : G. Straka, « La prononciation parisienne, ses divers aspects et ses traits distinctifs », <em>Bulletin de la Faculté des lettres de Strasbourg</em>, 1952 ; A. Fouché, <em>Phonétique historique du français</em>, Paris, Klincksieck, 1952–1961, t. II.</div></div>
+  <div class="fn"><div class="fn-n">8.</div><div>Sur la tradition homiléticque sulpicienne et sa persistance dans les séminaires français jusqu'à la Révolution et au-delà : L. Cognet, <em>De la dévotion moderne à la spiritualité française</em>, Paris, Fayard, 1958 ; R. Taveneaux, <em>Le catholicisme dans la France classique, 1610–1715</em>, Paris, SEDES, 1980, t. I, p. 188–216 ; M. Launay, <em>L'Église et l'école en France, XVII<sup>e</sup>–XVIII<sup>e</sup> siècles</em>, Paris, Desclée, 1988.</div></div>
+</div>
+
+<div class="colophon">
+  <span class="col-orn">✦</span>
+  <em>Analyse réalisée sur la base du corpus manuscrit complet :<br>
+  macrophotographies des manuscrits (haute résolution, mai 2026) ·<br>
+  reproductions numérisées de l'ensemble des folios originaux (PDF) ·<br>
+  transcriptions intégrales des sermons (documents HTML)</em><br><br>
+  <em><br>
+  </em><br><br>
+  Mise en page académique ·Gildas RICARD Mai 2026
+</div>
+
+</body>
+</html>
