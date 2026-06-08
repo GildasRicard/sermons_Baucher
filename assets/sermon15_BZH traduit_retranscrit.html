@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sermon du XVIIIe siècle - De paucitate electorum</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #faf6ee;
+      color: #2a2421;
+      font-family: "EB Garamond", "Garamond", "Georgia", serif;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .manuscript-container {
+      max-width: 820px;
+      margin: 60px auto;
+      background: #ffffff;
+      padding: 70px 85px;
+      border: 1px solid #e3dac9;
+      box-shadow: 0 15px 45px rgba(42, 36, 33, 0.05);
+      position: relative;
+    }
+
+    /* Top ecclesiastical marker */
+    .header-badge {
+      text-align: center;
+      font-size: 0.85rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #8a1c14;
+      margin-bottom: 30px;
+      font-weight: 600;
+    }
+
+    .header-badge span {
+      border: 1px solid #8a1c14;
+      padding: 4px 12px;
+      border-radius: 2px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: normal;
+      color: #1c1512;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      line-height: 1.2;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: #6b5b52;
+      margin-bottom: 40px;
+    }
+
+    /* Sacred Scripture Theme Box */
+    .epigraph-box {
+      border-top: 1px double #c49a45;
+      border-bottom: 1px double #c49a45;
+      padding: 20px 0;
+      margin: 35px 0;
+      text-align: center;
+    }
+
+    .epigraph-latin {
+      font-size: 1.4rem;
+      color: #8a1c14;
+      font-weight: bold;
+      letter-spacing: 0.02em;
+      margin-bottom: 5px;
+    }
+
+    .epigraph-french {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: #3a322d;
+      margin-bottom: 5px;
+    }
+
+    .epigraph-source {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #c49a45;
+      font-weight: bold;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: #8a1c14;
+      margin-top: 45px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border-bottom: 1px solid #e8e1d5;
+      padding-bottom: 5px;
+    }
+
+    p {
+      text-align: justify;
+      text-indent: 2.5em;
+      margin: 0 0 1.2em 0;
+      font-size: 1.2rem;
+    }
+
+    p.no-indent {
+      text-indent: 0;
+    }
+
+    .latin-inline {
+      font-style: italic;
+      color: #8a1c14;
+      font-weight: 500;
+    }
+
+    /* Blockquote for Saint Augustine or heavy citations */
+    blockquote {
+      margin: 30px 0;
+      padding: 15px 25px;
+      background-color: #faf7f2;
+      border-left: 3px solid #8a1c14;
+      font-style: italic;
+      font-size: 1.15rem;
+    }
+    
+    blockquote p {
+      text-indent: 0;
+      margin: 0;
+      text-align: left;
+    }
+
+    /* Section Divider Ornament */
+    .ornament {
+      text-align: center;
+      margin: 40px 0;
+      color: #c49a45;
+      font-size: 1.4rem;
+      letter-spacing: 0.5em;
+    }
+
+    /* Highlighting for the dramatic visualization */
+    .dramatic-section {
+      background: #fdfaf6;
+      border: 1px dashed #d6cbd4;
+      padding: 30px;
+      margin: 35px 0;
+      border-radius: 4px;
+    }
+    
+    .dramatic-section p {
+      font-size: 1.2rem;
+    }
+
+    /* Final Exclamation Styling */
+    .final-exclamation {
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #8a1c14;
+      letter-spacing: 0.15em;
+      margin-top: 60px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    footer {
+      margin-top: 70px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #9c8e85;
+      border-top: 1px solid #e8e1d5;
+      padding-top: 25px;
+      font-style: italic;
+    }
+
+    @media (max-width: 850px) {
+      .manuscript-container {
+        margin: 20px;
+        padding: 45px 35px;
+      }
+      p {
+        font-size: 1.1rem;
+        text-indent: 1.5em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="manuscript-container">
+    
+    <div class="header-badge"><span>Homélie Ancienne</span></div>
+    
+    <h1>Sermon sur le Petit Nombre des Élus</h1>
+    <div class="subtitle">Traduction d'un manuscrit de prédication écrit en langue bretonne — XVIII<sup>e</sup> siècle</div>
+
+    <div class="epigraph-box">
+      <div class="epigraph-latin">Multi sunt vocati, pauci vero electi.</div>
+      <div class="epigraph-french">Beaucoup sont appelés, mais peu seront choisis.</div>
+      <div class="epigraph-source">Saint Matthieu, XX, 16</div>
+    </div>
+
+    <h2>I. Le Témoignage des Écritures</h2>
+    <p>
+      On demande chaque jour s'il est vrai que le chemin qui mène au Ciel est si difficile, et s'il est vrai que le nombre des sauvés est aussi petit qu'on nous l'annonce. À cette question si importante pour nous tous, Jésus-Christ le Sauveur lui-même répond dans l'Évangile que beaucoup sont appelés mais peu sont choisis : <span class="latin-inline">multi sunt vocati etc.</span> Il nous montre que si le nombre de ceux qui furent sauvés en Israël était grand au temps du prophète Élisée, le nombre des élus reste restreint.
+    </p>
+    <p>
+      Si mon dessein était de vous alarmer plutôt que de vous instruire, il me suffirait de vous citer ce qu'il y a de plus terrible dans les Livres Saints. Je parcourrais tous les âges depuis le commencement du monde pour vous montrer combien, en tout temps, le nombre des sauvés fut petit. 
+    </p>
+    <p>
+      Seule la famille de Noé fut sauvée du déluge universel ; sur des milliers d'hommes, seuls Caleb et Josué eurent le bonheur d'entrer en Terre Promise ; Loth fut le seul juste trouvé dans Sodome, et seuls trois jeunes juifs furent épargnés dans la fournaise de Babylone. Le prophète Isaïe compare les justes sur la terre à des grains de raisin restant après la récolte.
+    </p>
+    <p>
+      L'Évangile confirme cela en nous parlant de deux chemins : l'un étroit qui mène à la vie et où peu de gens s'engagent, l'autre large qui mène à l'enfer et où s'engage la plus grande partie des hommes. Si je voulais effrayer votre conscience, je vous montrerais clairement que la plupart d'entre nous seront perdus et n'entreront jamais dans ce Royaume pour lequel nous avons été créés. Mais je préfère vous montrer le danger pour vous enseigner comment l'éviter. Le nombre des sauvés est petit parce que peu d'hommes vivent en vrais chrétiens. Peu seront sauvés car peu se donnent sincèrement à Dieu et persévèrent dans la justice.
+    </p>
+
+    <div class="ornament">❦ ❦ ❦</div>
+
+    <h2>II. Les Deux Voies : L'Innocence ou la Pénitence</h2>
+    <p>
+      On ne peut compter dans le nombre des élus que deux sortes de personnes : ceux qui ont eu le bonheur de conserver leur innocence, ou ceux qui l'ont réparée par une vraie pénitence. Il n'y a que deux chemins vers le Ciel : l'innocence ou la pénitence. 
+    </p>
+    <p>
+      Or, par lequel cheminez-vous ? Êtes-vous innocents ou êtes-vous pénitents ? Rien de souillé n'entrera dans le Royaume de Dieu. Mais qui peut songer à aller au Ciel par le chemin de l'innocence conservée depuis le baptême ? Où est cette innocence alors que la corruption est devenue presque générale ? Le premier usage que nous faisons de notre cœur est souvent un péché, et nos premières inclinations sont des passions coupables. La terre est souillée par la corruption des hommes : l'injustice, la calomnie, la médisance et les péchés les plus graves inondent le monde. La vertu elle-même est méprisée et moquée.
+    </p>
+    <p>
+      Puisque l'innocence est perdue pour presque tous, seule la pénitence peut nous sauver. Mais où sont les pénitents parmi la multitude des chrétiens ? Un Père de l'Église affirme qu'il y a plus d'hommes n'ayant jamais péché gravement que d'hommes s'étant relevés par une véritable pénitence. 
+    </p>
+    <p>
+      Qu'est-ce qu'un vrai pénitent ? C'est un homme qui ressent continuellement la douleur d'avoir offensé Dieu et qui a ses péchés toujours devant les yeux pour les pleurer. Il se prive des plaisirs parce qu'il en a pris de criminels autrefois ; il regarde son corps comme son plus grand adversaire qu'il doit châtier et purifier. Il accepte les humiliations et les afflictions comme la punition due à ses fautes et comme un moyen d'aller au Ciel. Où sont les pénitents de ce caractère dans notre assemblée ?
+    </p>
+
+    <div class="ornament">❦ ❦ ❦</div>
+
+    <h2>III. Les Maximes du Monde contre l'Évangile</h2>
+    <p>
+      Pour être sauvé, nous sommes obligés de vivre selon les maximes de l'Évangile, mais combien prennent l'Évangile pour règle de conduite ? Le monde est le plus grand adversaire de Jésus-Christ, et celui qui suit les maximes du monde se déclare son ennemi. Il est impossible de servir deux maîtres : <span class="latin-inline">nemo potest duobus dominis servire</span>. Pourtant, beaucoup espèrent être sauvés tout en sachant qu'ils ne sont ni innocents, ni véritablement pénitents. Ils suivent la foule dans le péché et se rassurent en voyant que les autres font de même.
+    </p>
+    <p>
+      L'entrée du Ciel est fermée à ceux qui transgressent la loi de Dieu. En fréquentant les auberges et les compagnies dangereuses qui causent le naufrage de la vertu, comment peut-on espérer faire partie du petit nombre qui entrera dans la Jérusalem céleste ? Personne ne vit innocent, personne ne vit pénitent, et pourtant nous voyons mourir chaque jour nos amis et nos voisins sans nous demander quel sort les attend pour l'éternité.
+    </p>
+    <p>
+      Le nombre des sauvés est petit car les maximes adoptées par les chrétiens sont des maximes de péché. On pense que nos biens nous appartiennent sans obligation envers le prochain ; on croit que la jeunesse est faite pour le divertissement et les passions en laissant Dieu de côté ; les parents ferment les yeux sur les désordres de leurs enfants. Ces usages sont pernicieux. Ce n'est pas sur les usages du monde que nous serons jugés, mais sur l'Évangile et sur la loi de Dieu.
+    </p>
+    
+    <blockquote>
+      <p>Saint Augustin s'écriait : « Malheur au fleuve des coutumes humaines qui entraîne les hommes au fond de l'abîme ! »</p>
+    </blockquote>
+
+    <p>
+      Le chrétien a trois obligations principales contractées au baptême : renoncer au monde, à la chair et au démon. Renoncer à la chair, c'est s'engager à ne pas vivre selon ses passions mais à crucifier son corps. Or, l'orgueil et les plaisirs remplissent la plupart des actions de notre vie. Une action ou un plaisir qui n'est pas fait pour Dieu est nécessairement pour le démon. Si nous comprenions vraiment les obligations du nom de chrétien, nous demanderions avec crainte : « Qui donc pourra être sauvé ? »
+    </p>
+    <p>
+      Ceux qui seront sauvés sont ceux qui travaillent à leur salut avec crainte et tremblement, ceux qui vivent dans le monde sans vivre comme le monde, ceux qui ont les mains innocentes et le cœur pur. Il est certain que si nous imitons la multitude, nous ne pouvons espérer être sauvés. La plupart des gens se perdent, et pourtant chacun espère être sauvé individuellement tout en suivant le chemin de la mort.
+    </p>
+
+    <div class="ornament">❦ ❦ ❦</div>
+
+    <h2>IV. Appel à l'Examen de Conscience</h2>
+    
+    <div class="dramatic-section">
+      <p class="no-indent">
+        Supposons que votre dernière heure soit arrivée et que Jésus-Christ paraisse dans ce temple pour juger et séparer les bons des mauvais. Si le jugement avait lieu à cet instant, croyez-vous que le plus grand nombre d'entre nous serait placé à sa droite ? 
+      </p>
+      <p class="no-indent" style="margin-top: 15px;">
+        Parmi vous, il y a des pécheurs qui ne veulent pas se convertir, d'autres qui remettent à plus tard, d'autres qui retombent sans cesse. Où seraient les justes ? Peut-être n'y en a-t-il pas deux dans cette assemblée ! Des saints ont tremblé au moment de la mort après une vie de pénitence, et vous, après une vie de péché, vous vivez tranquilles !
+      </p>
+    </div>
+
+    <p>
+      Il ne faut pas désespérer, mais il faut comprendre que pour se sauver, il faut se distinguer de la foule, résister à ses inclinations et cesser de ne chercher que les plaisirs et les honneurs. Beaucoup sont appelés, mais peu seront choisis. Si vous entendez aujourd'hui la voix de Dieu, n'endurcissez pas votre cœur. Faites tout votre possible pour assurer votre salut par de bonnes œuvres. Craignons d'être comme l'arbre qui ne porte pas de bons fruits et qui est condamné au feu. Assurons notre salut par une vie édifiante, afin d'obtenir la grâce d'être du petit nombre des élus.
+    </p>
+
+    <div class="final-exclamation">Prat !!!</div>
+
+    <footer>
+      Manuscrit de prédication du Trégor — Paroisse de Prat<br>
+      Transcription de la version bretonne traduite en français.
+    </footer>
+
+  </div>
+
+</body>
+</html>
